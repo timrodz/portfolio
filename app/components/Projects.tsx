@@ -154,7 +154,7 @@ const projects: ProjectType[] = [
     slug: "game-i-am-monster",
     url: "https://www.youtube.com/watch?v=ekNfJQBq4Q8",
     imageUrl: "/projects/i-am-monster.png",
-    imageAlt: 'three big creatures in a city, with the word "I Am Monster"',
+    imageAlt: 'Three big creatures in a city, with the word "I Am Monster"',
     techStack: ["Unity", "Csharp", "Python"],
     company: "PikPok",
     role: "Game Programmer",
@@ -162,7 +162,7 @@ const projects: ProjectType[] = [
       <p>
         Fresh out of university, this was the first commercial project I worked
         on. I joined the team as a Junior Game Programmer, and took ownerhsip of
-        building many of the game's UIs. It's also the first time I had a look
+        building many of the game’s UIs. It’s also the first time I had a look
         at backend development with Python, and I absolutely loved the entire
         process!
       </p>
@@ -228,7 +228,7 @@ const Project = ({ project }: { project: ProjectType }) => {
           {project.techStack && (
             <div id="project-technologies">
               {project.techStack.map((name) => (
-                <Fragment>
+                <Fragment key={`technology-${name}`}>
                   <Link
                     id="technology-name"
                     aria-label={name}
@@ -253,7 +253,7 @@ export const Projects = () => (
     <hr />
     <p className="lg:text-lg">
       {
-        "Below are exciting projects I have created and/or contributed to during my career. Due to the nature of some industries, certain projects are under NDA agreements, so I cannot show everything I've worked on."
+        "Below are exciting projects I have created and/or contributed to during my career. Due to the nature of some industries, certain projects are under NDA agreements, so I cannot show everything I’ve worked on."
       }
     </p>
     <div id="project-showcase">

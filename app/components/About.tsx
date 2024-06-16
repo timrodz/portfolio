@@ -37,9 +37,9 @@ export const About = () => {
         work with them on a daily basis.
       </p>
       <p>
-        I strongly believe tools are just that: tools. For that reason, I don't
+        I strongly believe tools are just that: tools. For that reason, I don’t
         have strong opinions about this or that technology; everything has a
-        purpose, even if that means the code I wrote years ago doesn't look
+        purpose, even if that means the code I wrote years ago doesn’t look
         great today. That being said,{" "}
         <span className="font-semibold">
           these are the tools I enjoy working with the most (as of{" "}
@@ -58,7 +58,7 @@ export const About = () => {
             "AWS",
           ] as TechnologyName[]
         ).map((name) => (
-          <Fragment>
+          <Fragment key={`technology-${name}`}>
             <Link
               id="technology-name"
               aria-label={name}
@@ -71,7 +71,7 @@ export const About = () => {
         ))}
       </div>
       <p>
-        When I'm not writing code you can find me working out (gym/cycling),
+        When I’m not writing code you can find me working out (gym/cycling),
         playing video games (Currently playing: Age Of Empires IV, Forza Horizon
         5), planning the next travel destination, or thinking about what to
         learn next.
