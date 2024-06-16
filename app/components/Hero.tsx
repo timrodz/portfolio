@@ -42,7 +42,7 @@ const Scene = ({ numStars = 100 }) => {
   const yAngle = useTransform(
     scrollYProgress,
     [0, 1],
-    [0.001, degreesToRadians(180)]
+    [degreesToRadians(45), degreesToRadians(180)]
   );
   const distance = useTransform(scrollYProgress, [0, 1], [10, 5]);
   const time = useTime();
