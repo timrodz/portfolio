@@ -17,9 +17,66 @@
 }
 
 body {
+  --teal: #0c6058;
+  --background: #fffefc;
+
   color: rgb(var(--foreground-rgb));
-  background: rgb(251, 251, 251);
-  @apply text-zinc-800;
+  background: var(--background);
+}
+
+/* html, */
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+main {
+  position: relative;
+  z-index: 10;
+  background: linear-gradient(#e8e8e8, #f8f8f8 30px, var(--background) 75px);
+}
+
+canvas {
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: pixelated;
+  image-rendering: optimize-contrast;
+}
+
+h1 {
+  @apply text-5xl md:text-7xl font-bold hover:underline hover:cursor-pointer mb-3;
+}
+
+h2 {
+  @apply text-4xl md:text-6xl text-teal-600 font-semibold mt-4 mb-3;
+}
+
+h3 {
+  @apply text-3xl md:text-4xl text-teal-700 font-semibold mt-4 mb-3;
+}
+
+p {
+  @apply text-zinc-700;
+}
+
+hr {
+  @apply mb-6;
+}
+
+button {
+  @apply text-teal-700 bg-white px-8 py-2 font-medium text-lg rounded-md border-[1px] border-zinc-50 hover:underline shadow-md;
+}
+
+a {
+  @apply text-teal-700 hover:underline hover:decoration-teal-800;
+}
+
+ul {
+  @apply text-zinc-700;
+}
+
+#about p {
+  @apply lg:text-lg;
 }
 
 @layer utilities {
@@ -28,30 +85,98 @@ body {
   }
 }
 
-.subtext {
-  @apply text-zinc-500;
+header {
+  position: relative;
+  height: 100vh;
+  z-index: 0;
 }
 
-.hero-button {
-  @apply bg-white px-8 py-2 font-medium text-lg rounded-sm border-[1px] border-zinc-50 hover:underline shadow-md;
+#hero-wrapper-parallax {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
-.hero-name-show {
-  display: none;
-}
-
-.hero-name:hover .hero-name-show {
-  display: block;
-}
-
-.hero-wrapper {
+#hero-bg-wrapper {
+  color: #0c6e64;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
-  color: #0d9488;
-  background-color: #85eed9;
   background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 15.347 39.647 14 50 14c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 13.278 60.562 12 50 12c-10.626 0-16.855 1.397-26.66 5.063l-1.767.662c-2.475.923-4.66 1.674-6.724 2.275h6.335zm0-20C13.258 2.892 8.077 4 0 4V2c5.744 0 9.951-.574 14.85-2h6.334zM77.38 0C85.239 2.966 90.502 4 100 4V2c-6.842 0-11.386-.542-16.396-2h-6.225zM0 14c8.44 0 13.718-1.21 22.272-4.402l1.768-.661C33.64 5.347 39.647 4 50 4c10.271 0 15.362 1.222 24.629 4.928C84.112 12.722 89.438 14 100 14v-2c-10.271 0-15.362-1.222-24.629-4.928C65.888 3.278 60.562 2 50 2 39.374 2 33.145 3.397 23.34 7.063l-1.767.662C13.223 10.84 8.163 12 0 12v2z' fill='%23ffffff' fill-opacity='0.22' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+#hero-content {
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+
+  @apply max-w-screen-lg lg:max-w-screen-xl mx-auto px-6 lg:px-10 w-full pointer-events-auto;
+}
+
+#hero-content p {
+  @apply text-xl md:text-5xl font-mono mb-6;
+}
+
+#hero-content #socials {
+  @apply mb-4;
+}
+
+#content {
+  @apply max-w-screen-lg mx-auto px-6 md:px-12 lg:px-16 pt-32 lg:pt-48 pb-0;
+}
+
+#project-showcase {
+  @apply mt-8 flex flex-col gap-[4rem] lg:gap-[6rem];
+}
+
+#project-image {
+  @apply rounded-md shadow-none lg:shadow-xl;
+}
+
+#project-details {
+  background: var(--background);
+  @apply w-full lg:w-[70%];
+}
+
+#project-summary {
+  @apply flex flex-col gap-3 text-zinc-700 text-base;
+}
+
+#project-summary a {
+  @apply hover:underline;
+}
+
+#project-technologies a {
+  @apply border-[1px] rounded-md p-1;
+}
+
+footer {
+  position: relative;
+  background-color: var(--background);
+  z-index: 10;
+  background-image: url("/footer.svg");
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+
+  @apply pt-[18rem] lg:pt-[24rem] pb-16;
+}
+
+footer a {
+  @apply hover:underline;
+}
+
+footer #socials {
+  @apply gap-4;
+}
+
+#footer-container {
+  @apply max-w-screen-lg mx-auto flex flex-col lg:flex-row lg:items-center justify-between px-4 gap-10 lg:gap-0;
 }

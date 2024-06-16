@@ -1,0 +1,16 @@
+{
+  "name": "Portfolio - Juan Alejandro Morais",
+  "short_name": "Juan Alejandro Morais",
+  "description": "Portfolio for Juan Alejandro Morais, Software Engineer",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#fff",
+  "theme_color": "#0e9f96",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}
