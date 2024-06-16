@@ -1,10 +1,11 @@
 import { TechnologyName, TechnologyNameUrl } from "data";
 import Link from "next/link";
 import { Fragment } from "react";
+import { TechStack } from "./TechStack";
 
 export const About = () => {
   return (
-    <section id="about" className="mb-16 lg:mb-20">
+    <section id="about">
       <h2>Welcome 👋</h2>
       <hr />
       <p>
@@ -47,29 +48,16 @@ export const About = () => {
         </span>
         :
       </p>
-      <div id="project-technologies" className="mb-4">
-        {(
-          [
-            "React",
-            "TypeScript",
-            "NextJS",
-            "Elixir",
-            "PostgreSQL",
-            "AWS",
-          ] as TechnologyName[]
-        ).map((name) => (
-          <Fragment key={`technology-${name}`}>
-            <Link
-              id="technology-name"
-              aria-label={name}
-              href={TechnologyNameUrl[name]}
-              target="_blank"
-            >
-              {name}
-            </Link>{" "}
-          </Fragment>
-        ))}
-      </div>
+      <TechStack
+        technologies={[
+          "React",
+          "TypeScript",
+          "NextJS",
+          "Elixir",
+          "PostgreSQL",
+          "AWS",
+        ]}
+      />
       <p>
         When I’m not writing code you can find me working out (gym/cycling),
         playing video games (Currently playing: Age Of Empires IV, Forza Horizon

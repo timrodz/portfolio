@@ -122,8 +122,10 @@ export const Hero = () => {
           {/* <pre className="text-[0.5rem] mb-4">
             Psst! Try dragging my name around...
           </pre> */}
-          <Link href="#content">
-            <button id="hero-cta">See my work ↓</button>
+          <Link href="#projects">
+            <button id="hero-cta">
+              See my work below <span className="font-mono">↓</span>
+            </button>
           </Link>
         </motion.div>
       </motion.div>
@@ -131,6 +133,9 @@ export const Hero = () => {
         id="canvas-container"
         gl={{ antialias: false, toneMapping: THREE.NoToneMapping }}
         linear
+        // Keep the DPI low so the canvas emulates a pixel art look
+        // Normally this would't be needed but seems like iOS devices change the DPR to 1 when scrolling
+        dpr={[0.25, 0.35]}
       >
         <Scene />
       </Canvas>

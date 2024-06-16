@@ -2,6 +2,7 @@ import { type TechnologyName, TechnologyNameUrl } from "data";
 import Image from "next/image";
 import Link from "next/link";
 import { Fragment } from "react";
+import { TechStack } from "./TechStack";
 
 type ProjectType = {
   title: string;
@@ -10,7 +11,7 @@ type ProjectType = {
   url: string;
   imageUrl: string;
   imageAlt: string;
-  techStack: TechnologyName[];
+  technologies: TechnologyName[];
   summary: React.ReactNode;
   year: string;
   company?: string;
@@ -25,13 +26,13 @@ const projects: ProjectType[] = [
     slug: "the-next-legends",
     url: "https://www.thenextlegends.xyz/",
     imageUrl: "/projects/tnl.jpg",
-    techStack: [
+    technologies: [
       "React",
       "TypeScript",
       "NextJS",
       "AWS",
       "Unity",
-      "Csharp",
+      "C#",
       "ExpressJS",
     ],
     imageAlt: 'Image of Muhammad Ali with text "The Next Legends"',
@@ -60,7 +61,7 @@ const projects: ProjectType[] = [
     url: "https://opensea.io/collection/partybear/",
     imageUrl: "/projects/pb-swappables.jpg",
     imageAlt: 'A Party Bear (NFT) with text saying "Clear The Runway"',
-    techStack: ["React", "TypeScript", "NextJS", "AWS", "Unity", "Csharp"],
+    technologies: ["React", "TypeScript", "NextJS", "AWS", "Unity", "C#"],
     company: "Futureverse",
     role: "Lead Developer",
     summary: (
@@ -89,7 +90,7 @@ const projects: ProjectType[] = [
     imageUrl: "/projects/roastmysite.png",
     imageAlt:
       'Image of the website saying "Your website’s roasts are now public"',
-    techStack: ["React", "TypeScript", "NextJS", "PostgreSQL"],
+    technologies: ["React", "TypeScript", "NextJS", "PostgreSQL"],
     summary: (
       <Fragment>
         <p>
@@ -112,7 +113,7 @@ const projects: ProjectType[] = [
     url: "https://marketplace.visualstudio.com/items?itemName=timrodz.lightswitch",
     imageUrl: "/projects/light-switch.png",
     imageAlt: "A light bulb emoji on a blue background",
-    techStack: ["TypeScript", "Azure"],
+    technologies: ["TypeScript", "Azure"],
     summary: (
       <Fragment>
         <p>
@@ -133,7 +134,7 @@ const projects: ProjectType[] = [
     url: "https://pikpok.com/games/clusterduck/",
     imageUrl: "/projects/clusterduck.png",
     imageAlt: "Many ducks with a hole in the middle",
-    techStack: ["Unity", "Csharp"],
+    technologies: ["Unity", "C#"],
     company: "PikPok",
     role: "Game Programmer",
     summary: (
@@ -155,7 +156,7 @@ const projects: ProjectType[] = [
     url: "https://www.youtube.com/watch?v=ekNfJQBq4Q8",
     imageUrl: "/projects/i-am-monster.png",
     imageAlt: 'Three big creatures in a city, with the word "I Am Monster"',
-    techStack: ["Unity", "Csharp", "Python"],
+    technologies: ["Unity", "C#", "Python"],
     company: "PikPok",
     role: "Game Programmer",
     summary: (
@@ -176,7 +177,7 @@ const projects: ProjectType[] = [
     url: "https://timrodz.itch.io/el-mandamas",
     imageUrl: "/projects/el-mandamas.png",
     imageAlt: 'Map of Panama with text saying "El Mandamás" (The ruler)',
-    techStack: ["Unity", "Csharp"],
+    technologies: ["Unity", "C#"],
     summary: (
       <p>
         This game was the result of a 48 hour game jam (
@@ -201,7 +202,7 @@ const Project = ({ project }: { project: ProjectType }) => {
         >
           <h3 className="m-0">{project.title}</h3>
         </Link>
-        <p className="text-gray-500">{project.type}</p>
+        <h4 className="text-gray-500">{project.type}</h4>
       </div>
       <div
         id="project-container"
@@ -225,22 +226,7 @@ const Project = ({ project }: { project: ProjectType }) => {
           >
             <span className="font-mono">→</span> Click here to learn more
           </Link>
-          {project.techStack && (
-            <div id="project-technologies">
-              {project.techStack.map((name) => (
-                <Fragment key={`technology-${name}`}>
-                  <Link
-                    id="technology-name"
-                    aria-label={name}
-                    href={TechnologyNameUrl[name]}
-                    target="_blank"
-                  >
-                    {name}
-                  </Link>{" "}
-                </Fragment>
-              ))}
-            </div>
-          )}
+          <TechStack technologies={project.technologies} />
         </div>
       </div>
     </div>
@@ -248,7 +234,7 @@ const Project = ({ project }: { project: ProjectType }) => {
 };
 
 export const Projects = () => (
-  <section id="projects">
+  <section id="projects" className="pt-10">
     <h2>Portfolio</h2>
     <hr />
     <p className="lg:text-lg">

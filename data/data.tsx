@@ -4,7 +4,7 @@ export type TechnologyName =
   | "Elixir"
   | "NextJS"
   | "Unity"
-  | "Csharp"
+  | "C#"
   | "AWS"
   | "TypeScript"
   | "React"
@@ -16,7 +16,7 @@ export type TechnologyName =
 export const TechnologyNameUrl: Record<TechnologyName, string> = {
   NextJS: "https://nextjs.org/",
   Unity: "https://unity.com/",
-  Csharp: "https://learn.microsoft.com/en-us/dotnet/csharp/",
+  "C#": "https://learn.microsoft.com/en-us/dotnet/csharp/",
   AWS: "https://aws.amazon.com/",
   TypeScript: "https://www.typescriptlang.org/",
   React: "https://react.dev/",
