@@ -8,6 +8,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://timrodz.dev"),
   title: "Portfolio - Juan Alejandro Morais",
   description: "See my work!",
   authors: [
