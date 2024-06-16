@@ -24,7 +24,6 @@ body {
   background: var(--background);
 }
 
-/* html, */
 body {
   max-width: 100%;
   overflow-x: hidden;
@@ -76,7 +75,7 @@ ul {
 }
 
 #about p {
-  @apply lg:text-lg;
+  @apply lg:text-lg mt-2 mb-4;
 }
 
 @layer utilities {
@@ -133,7 +132,11 @@ header {
 }
 
 #project-showcase {
-  @apply mt-8 flex flex-col gap-[4rem] lg:gap-[6rem];
+  @apply mt-10 lg:mt-12 flex flex-col gap-[4rem] lg:gap-[6rem];
+}
+
+#project-showcase h3 {
+  @apply text-2xl lg:text-3xl mb-2 lg:mb-0;
 }
 
 #project-image {
@@ -154,7 +157,7 @@ header {
 }
 
 #project-technologies a {
-  @apply border-[1px] rounded-md p-1;
+  @apply border-[1px] rounded-md p-1 leading-[2.25rem];
 }
 
 footer {
@@ -179,4 +182,8 @@ footer #socials {
 
 #footer-container {
   @apply max-w-screen-lg mx-auto flex flex-col lg:flex-row lg:items-center justify-between px-4 gap-10 lg:gap-0;
+}
+
+#technology-name {
+  @apply font-mono;
 }

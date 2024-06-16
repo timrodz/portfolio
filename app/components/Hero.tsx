@@ -119,6 +119,9 @@ export const Hero = () => {
             {'creative_dev(["web", "3D"])'}
           </motion.p>
           <Socials />
+          {/* <pre className="text-[0.5rem] mb-4">
+            Psst! Try dragging my name around...
+          </pre> */}
           <Link href="#content">
             <button id="hero-cta">See my work ↓</button>
           </Link>

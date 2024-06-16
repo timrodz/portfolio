@@ -1,5 +1,31 @@
-import { Fragment } from "react";
 import "../app/globals.css";
+
+export type TechnologyName =
+  | "Elixir"
+  | "NextJS"
+  | "Unity"
+  | "Csharp"
+  | "AWS"
+  | "TypeScript"
+  | "React"
+  | "ExpressJS"
+  | "Azure"
+  | "PostgreSQL"
+  | "Python";
+
+export const TechnologyNameUrl: Record<TechnologyName, string> = {
+  NextJS: "https://nextjs.org/",
+  Unity: "https://unity.com/",
+  Csharp: "https://learn.microsoft.com/en-us/dotnet/csharp/",
+  AWS: "https://aws.amazon.com/",
+  TypeScript: "https://www.typescriptlang.org/",
+  React: "https://react.dev/",
+  ExpressJS: "https://expressjs.com/",
+  Azure: "https://azure.microsoft.com/en-us",
+  PostgreSQL: "https://www.postgresql.org/",
+  Python: "https://www.python.org/",
+  Elixir: "https://elixir-lang.org/",
+};
 
 const socials = [
   {

@@ -1,3 +1,4 @@
+import { TechnologyNameUrl } from "data";
 import { Socials } from "./Socials";
 
 export const Footer = () => {
@@ -12,12 +13,13 @@ export const Footer = () => {
             Copyright &copy; {new Date().getFullYear()} Juan Alejandro Morais.
             This site was built with{" "}
             <a
-              href="https://nextjs.org/"
+              href={TechnologyNameUrl["NextJS"]}
               rel="noopener noreferrer"
               target="_blank"
             >
-              Next.JS
+              NextJS
             </a>
+            .
           </p>
         </div>
         <Socials />

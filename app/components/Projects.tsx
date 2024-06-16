@@ -1,31 +1,7 @@
+import { type TechnologyName, TechnologyNameUrl } from "data";
 import Image from "next/image";
 import Link from "next/link";
 import { Fragment } from "react";
-
-type technology =
-  | "NextJS"
-  | "Unity"
-  | "Csharp"
-  | "AWS"
-  | "TypeScript"
-  | "React"
-  | "ExpressJS"
-  | "Azure"
-  | "PostgreSQL"
-  | "Python";
-
-const technologyUrls: Record<technology, string> = {
-  NextJS: "https://nextjs.org/",
-  Unity: "https://unity.com/",
-  Csharp: "https://learn.microsoft.com/en-us/dotnet/csharp/",
-  AWS: "https://aws.amazon.com/",
-  TypeScript: "https://www.typescriptlang.org/",
-  React: "https://react.dev/",
-  ExpressJS: "https://expressjs.com/",
-  Azure: "https://azure.microsoft.com/en-us",
-  PostgreSQL: "https://www.postgresql.org/",
-  Python: "https://www.python.org/",
-};
 
 type ProjectType = {
   title: string;
@@ -34,7 +10,7 @@ type ProjectType = {
   url: string;
   imageUrl: string;
   imageAlt: string;
-  techStack: technology[];
+  techStack: TechnologyName[];
   summary: React.ReactNode;
   year: string;
   company?: string;
@@ -43,10 +19,10 @@ type ProjectType = {
 
 const projects: ProjectType[] = [
   {
-    title: "The Next Legends: Muhammad Ali",
+    title: "The Next Legends",
     year: "2024",
-    type: "Web app, 3D Viewer, Videogame",
-    slug: "the-next-legends-muhammad-ali",
+    type: "Web app / 3D Viewer / Videogame",
+    slug: "the-next-legends",
     url: "https://www.thenextlegends.xyz/",
     imageUrl: "/projects/tnl.jpg",
     techStack: [
@@ -58,8 +34,7 @@ const projects: ProjectType[] = [
       "Csharp",
       "ExpressJS",
     ],
-    imageAlt:
-      'Image of Muhammad Ali with text "The Next Legends: Muhammad Ali"',
+    imageAlt: 'Image of Muhammad Ali with text "The Next Legends"',
     company: "Futureverse",
     role: "Lead Developer",
     summary: (
@@ -80,7 +55,7 @@ const projects: ProjectType[] = [
   {
     title: "Party Bear: Swappables",
     year: "2023",
-    type: "Web app, 3D Viewer",
+    type: "Web app / 3D Viewer",
     slug: "party-bear-swappables",
     url: "https://opensea.io/collection/partybear/",
     imageUrl: "/projects/pb-swappables.jpg",
@@ -118,9 +93,9 @@ const projects: ProjectType[] = [
     summary: (
       <Fragment>
         <p>
-          I have been learning how businesses operate, and as part of that
-          learning process I launched Roast My Site, a micro-SaaS startup that
-          helped business owners receive feedback for their landing pages.
+          I was learning how businesses operate, and as part of that learning
+          process I launched Roast My Site, a micro-SaaS startup that helped
+          business owners receive feedback for their landing pages.
         </p>
         <p>
           As the only developer on the team, I worked on all software features
@@ -181,7 +156,17 @@ const projects: ProjectType[] = [
     imageUrl: "/projects/i-am-monster.png",
     imageAlt: 'three big creatures in a city, with the word "I Am Monster"',
     techStack: ["Unity", "Csharp", "Python"],
-    summary: <Fragment></Fragment>,
+    company: "PikPok",
+    role: "Game Programmer",
+    summary: (
+      <p>
+        Fresh out of university, this was the first commercial project I worked
+        on. I joined the team as a Junior Game Programmer, and took ownerhsip of
+        building many of the game's UIs. It's also the first time I had a look
+        at backend development with Python, and I absolutely loved the entire
+        process!
+      </p>
+    ),
   },
   {
     title: "El Mandamás",
@@ -192,26 +177,35 @@ const projects: ProjectType[] = [
     imageUrl: "/projects/el-mandamas.png",
     imageAlt: 'Map of Panama with text saying "El Mandamás" (The ruler)',
     techStack: ["Unity", "Csharp"],
-    summary: <Fragment></Fragment>,
+    summary: (
+      <p>
+        This game was the result of a 48 hour game jam (
+        <Link href="https://itch.io/games/tag-ludum-dare-38" target="_blank">
+          Ludum Dare 38
+        </Link>
+        ), where I had to design and develop a game in the span of a weekend.
+      </p>
+    ),
   },
 ];
 
 const Project = ({ project }: { project: ProjectType }) => {
   return (
     <div id={`project-${project.slug}`}>
-      <Link
-        id="project-title"
-        href={project.url}
-        target="_blank"
-        className="hover:underline hover:decoration-teal-700"
-      >
-        <h3>
-          {project.title} - {project.type}
-        </h3>
-      </Link>
+      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
+        <Link
+          id="project-title"
+          href={project.url}
+          target="_blank"
+          className="hover:underline hover:decoration-teal-700"
+        >
+          <h3 className="m-0">{project.title}</h3>
+        </Link>
+        <p className="text-gray-500">{project.type}</p>
+      </div>
       <div
         id="project-container"
-        className="mt-6 flex flex-col lg:flex-row gap-6"
+        className="mt-4 flex flex-col lg:flex-row gap-6"
       >
         <Link id="project-image-container" href={project.url} target="_blank">
           <Image
@@ -229,15 +223,16 @@ const Project = ({ project }: { project: ProjectType }) => {
             target="_blank"
             className="font-medium block mt-2 mb-3"
           >
-            Click here to learn more
+            <span className="font-mono">→</span> Click here to learn more
           </Link>
           {project.techStack && (
             <div id="project-technologies">
               {project.techStack.map((name) => (
                 <Fragment>
                   <Link
+                    id="technology-name"
                     aria-label={name}
-                    href={technologyUrls[name]}
+                    href={TechnologyNameUrl[name]}
                     target="_blank"
                   >
                     {name}
