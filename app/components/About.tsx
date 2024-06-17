@@ -1,9 +1,10 @@
-import { TechnologyName, TechnologyNameUrl } from "data";
 import Link from "next/link";
-import { Fragment } from "react";
+import { useMemo } from "react";
 import { TechStack } from "./TechStack";
 
 export const About = () => {
+  const date = useMemo(() => new Date().toDateString(), []);
+
   return (
     <section id="about">
       <h2>Welcome 👋</h2>
@@ -43,8 +44,7 @@ export const About = () => {
         purpose, even if that means the code I wrote years ago doesn’t look
         great today. That being said,{" "}
         <span className="font-semibold">
-          these are the tools I enjoy working with the most (as of{" "}
-          {new Date().toLocaleDateString()})
+          these are the tools I enjoy working with the most (as of {date})
         </span>
         :
       </p>
