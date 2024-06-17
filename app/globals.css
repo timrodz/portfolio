@@ -62,8 +62,8 @@ hr {
   @apply mb-6;
 }
 
-button {
-  @apply text-teal-700 bg-white px-8 py-2 font-medium text-lg rounded-md border-[1px] border-zinc-50 hover:underline shadow-md;
+#hero-cta {
+  @apply text-teal-700 bg-white px-6 py-3 font-medium text-lg rounded-md border-[1px] border-zinc-50 hover:underline shadow-md;
 }
 
 a {

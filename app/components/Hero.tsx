@@ -120,10 +120,8 @@ export const Hero = () => {
           {/* <pre className="text-[0.5rem] mb-4">
             Psst! Try dragging my name around...
           </pre> */}
-          <Link href="#projects">
-            <button id="hero-cta">
-              See my work below <span className="font-mono">↓</span>
-            </button>
+          <Link href="#projects" id="hero-cta">
+            See my work below <span className="font-mono">↓</span>
           </Link>
         </motion.div>
       </motion.div>

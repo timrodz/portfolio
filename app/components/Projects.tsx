@@ -194,14 +194,16 @@ const Project = ({ project }: { project: ProjectType }) => {
   return (
     <div id={`project-${project.slug}`}>
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
-        <Link
-          id="project-title"
-          href={project.url}
-          target="_blank"
-          className="hover:underline hover:decoration-teal-700"
-        >
-          <h3 className="m-0">{project.title}</h3>
-        </Link>
+        <h3 className="m-0">
+          <Link
+            id="project-title"
+            href={project.url}
+            target="_blank"
+            className="hover:underline hover:decoration-teal-700"
+          >
+            {project.title}
+          </Link>
+        </h3>
         <h4 className="text-gray-500">{project.type}</h4>
       </div>
       <div
