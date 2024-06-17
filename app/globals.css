@@ -75,7 +75,7 @@ ul {
 }
 
 #about p {
-  @apply lg:text-lg mt-2 mb-4;
+  @apply lg:text-lg mt-3;
 }
 
 @layer utilities {

@@ -4,6 +4,7 @@ import { About } from "@components/About";
 import { Footer } from "@components/Footer";
 import { Hero } from "@components/Hero";
 import { Projects } from "@components/Projects";
+
 import { Fragment } from "react";
 
 export default function Home() {
@@ -15,7 +16,7 @@ export default function Home() {
       <main>
         <div id="content">
           <About />
-          <Projects />
+          {/* <Projects /> */}
         </div>
       </main>
       <Footer />
