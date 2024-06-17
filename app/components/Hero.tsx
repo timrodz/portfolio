@@ -9,14 +9,14 @@ import {
 } from "framer-motion";
 import Link from "next/link";
 import { degreesToRadians, mix, progress } from "popmotion";
-import { Fragment, useLayoutEffect, useRef } from "react";
+import { Fragment, useEffect, useLayoutEffect, useRef } from "react";
 import * as THREE from "three";
 import { Socials } from "./Socials";
 
 const StarMesh = ({ p, color }: { p: number; color: THREE.Color | string }) => {
   const ref = useRef<THREE.Object3D>(null);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const distance = mix(6, 13.5, Math.random());
     const yAngle = mix(
       degreesToRadians(80),
@@ -25,7 +25,7 @@ const StarMesh = ({ p, color }: { p: number; color: THREE.Color | string }) => {
     );
     const xAngle = degreesToRadians(360) * p;
     ref.current!.position.setFromSphericalCoords(distance, yAngle, xAngle);
-  });
+  }, [p]);
 
   return (
     // @ts-expect-error it simply works
@@ -37,8 +37,6 @@ const StarMesh = ({ p, color }: { p: number; color: THREE.Color | string }) => {
 };
 
 const Scene = ({ numStars = 100 }) => {
-  const gl = useThree((state) => state.gl);
-
   const { scrollYProgress } = useScroll();
   const yAngle = useTransform(
     scrollYProgress,
@@ -60,8 +58,6 @@ const Scene = ({ numStars = 100 }) => {
     camera.updateProjectionMatrix();
     camera.lookAt(0, 0, 0);
   });
-
-  useLayoutEffect(() => gl.setPixelRatio(0.3));
 
   const stars = [];
   for (let i = 0; i < numStars; i++) {
