@@ -1,5 +1,6 @@
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import {
+  cubicBezier,
   motion,
   useMotionValue,
   useScroll,
@@ -42,7 +43,8 @@ const Scene = ({ numStars = 100 }) => {
   const yAngle = useTransform(
     scrollYProgress,
     [0, 1],
-    [degreesToRadians(45), degreesToRadians(180)]
+    [degreesToRadians(45), degreesToRadians(180)],
+    { ease: cubicBezier(0.17, 0.67, 0.83, 0.67) }
   );
   const distance = useTransform(scrollYProgress, [0, 1], [10, 5]);
   const time = useTime();

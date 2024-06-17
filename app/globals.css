@@ -86,8 +86,12 @@ ul {
 
 header {
   position: relative;
-  height: 100vh;
+  height: 200vh;
   z-index: 0;
+
+  @media screen and (min-width: 1024px) {
+    height: 150vh;
+  }
 }
 
 #hero-wrapper-parallax {
