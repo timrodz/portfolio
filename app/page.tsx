@@ -14,7 +14,7 @@ export default function Home() {
         <Hero />
       </header>
       <main>
-        <div id="content">
+        <div id="page-contents">
           <About />
           <Projects />
         </div>

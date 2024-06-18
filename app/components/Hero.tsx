@@ -99,16 +99,16 @@ export const Hero = () => {
   );
 
   return (
-    <div id="hero-wrapper-parallax">
-      <motion.div id="hero-bg-wrapper" style={{ backgroundColor }}>
+    <div className="hero-wrapper-parallax">
+      <motion.div className="hero-bg-wrapper" style={{ backgroundColor }}>
         <motion.div
-          id="hero-content"
+          className="hero-content"
           style={{
             color: heroTextColor,
           }}
         >
           <motion.h1
-            id="hero-title"
+            className="hero-title"
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}
             whileHover={{ scale: 1.05 }}
@@ -116,22 +116,21 @@ export const Hero = () => {
           >
             Juan Alejandro Morais
           </motion.h1>
-          <motion.p id="hero-headline" style={{ color: heroTextColorLight }}>
+          <motion.p
+            className="hero-headline"
+            style={{ color: heroTextColorLight }}
+          >
             {'creative_dev(["web", "3D"])'}
           </motion.p>
           <Socials />
         </motion.div>
-        <div
-          id="hero-cta-container"
-          className="absolute bottom-0 right-1/2 translate-y-1/2 translate-x-[50%] mb-32 lg:mb-12"
-        >
-          <p id="hero-cta">
+        <div className="hero-cta-container absolute bottom-0 right-1/2 translate-y-1/2 translate-x-[50%] mb-32 lg:mb-12">
+          <p className="hero-cta">
             scroll to continue <span className="font-mono">↓</span>
           </p>
         </div>
       </motion.div>
       <Canvas
-        id="canvas-container"
         gl={{ antialias: false, toneMapping: THREE.NoToneMapping }}
         linear
         // Keep the DPI low so the canvas emulates a pixel art look

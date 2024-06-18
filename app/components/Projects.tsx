@@ -195,36 +195,32 @@ const Project = ({ project }: { project: ProjectType }) => {
     <div id={`project-${project.slug}`}>
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
         <h3 className="m-0">
-          <Link
-            id="project-title"
-            href={project.url}
-            target="_blank"
-            className="hover:underline hover:decoration-teal-700"
-          >
+          <Link href={project.url} target="_blank" className="project-title ">
             {project.title}
           </Link>
         </h3>
-        <h4 className="text-gray-500">{project.type}</h4>
+        <h4 className="text-gray-600">{project.type}</h4>
       </div>
-      <div
-        id="project-container"
-        className="mt-4 flex flex-col lg:flex-row gap-6"
-      >
-        <Link id="project-image-container" href={project.url} target="_blank">
+      <div className="project-container">
+        <Link
+          className="project-image-container"
+          href={project.url}
+          target="_blank"
+        >
           <Image
-            id="project-image"
+            className="project-image"
             src={project.imageUrl}
             alt={`${project.imageAlt}`}
             width={400}
             height={300}
           />
         </Link>
-        <div id="project-details">
-          <div id="project-summary">{project.summary}</div>
+        <div className="project-details">
+          <div className="project-summary">{project.summary}</div>
           <Link
             href={project.url}
             target="_blank"
-            className="font-medium block mt-2 mb-3"
+            className="font-medium block mt-3 mb-2"
           >
             <span className="font-mono">→</span> Click here to learn more
           </Link>
@@ -244,7 +240,7 @@ export const Projects = () => (
         "Below are exciting projects I have created and/or contributed to during my career. Due to the nature of some industries, certain projects are under NDA agreements, so I cannot show everything I’ve worked on."
       }
     </p>
-    <div id="project-showcase">
+    <div className="project-showcase">
       {projects.map((p, idx) => {
         return <Project key={idx} project={p} />;
       })}

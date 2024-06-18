@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export const Socials = () => {
   return (
-    <div id="socials" className="flex gap-4">
+    <div className="socials flex gap-4">
       {socials.map(({ name, url, icon }) => (
         <motion.a
           href={url}

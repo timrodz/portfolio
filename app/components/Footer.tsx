@@ -5,7 +5,7 @@ import Link from "next/link";
 export const Footer = () => {
   return (
     <footer>
-      <div id="footer-container">
+      <div className="footer-container">
         <div>
           <p className="text-2xl text-teal-800 mb-2">
             Thank you for visiting! 👋

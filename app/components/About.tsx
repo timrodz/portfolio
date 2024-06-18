@@ -33,14 +33,10 @@ export const About = () => {
       </Link>
       <h3>About me</h3>
       <p>
-        Born in{" "}
-        <Link href="https://en.wikipedia.org/wiki/Chitr%C3%A9" target="_blank">
-          Chitré, Panamá
-        </Link>{" "}
-        🇵🇦 in 1995, I’m somewhat of a cross between millenials and Gen Z’ers.
-        That just means I understand some of today’s memes. Since I was young,
-        computers have been a part of my life, so naturally I’m very happy I
-        work with them on a daily basis.
+        Born in Chitré, Panamá 🇵🇦 in 1995, I’m somewhat of a cross between
+        millenials and Gen Z’ers. That just means I understand some of today’s
+        memes. Since I was young, computers have been a part of my life, so
+        naturally I’m very happy I work with them on a daily basis.
       </p>
       <p>
         I strongly believe tools are just that: tools. For that reason, I don’t
@@ -63,39 +59,36 @@ export const About = () => {
         ]}
       />
       <p>
-        When I’m not writing code, you can find me working out (gym/cycling),
-        playing games (Age Of Empires IV, Forza Horizon 5, Magic: The
-        Gathering), planning the next travel destination, or thinking about what
-        to learn next. By the way, here’s what I look like:
+        When I’m not writing code, you can find me outdoors, working out
+        (gym/cycling), playing games (Age Of Empires IV, Forza Horizon 5, Magic:
+        The Gathering), planning the next travel destination, or thinking about
+        what to learn next.
       </p>
-      <div
-        id="photos"
-        className="mt-10 px-5 lg:px-0 flex flex-col lg:flex-row gap-10"
-      >
-        <Photo
+      <div className="polaroid-gallery">
+        <PolaroidPhoto
           source="/pictures/mexico.jpg"
           alt="Picture of me in a Café in México City, México"
           description="México City 2023"
           className="rotate-[-2deg]"
         />
-        <Photo
+        <PolaroidPhoto
           source="/pictures/queenstown.jpg"
           alt="Picture of me with a mountain bike in Queenstown, New Zealand"
           description="Queenstown, NZ 2021"
           className="rotate-[1deg]"
         />
-        <Photo
+        <PolaroidPhoto
           source="/pictures/yosemite.jpg"
           alt="Picture of me around Yosemite, California"
           description="California 2019"
-          className="rotate-[3deg]"
+          className="rotate-[2deg]"
         />
       </div>
     </section>
   );
 };
 
-const Photo = ({
+const PolaroidPhoto = ({
   source,
   alt,
   description,
@@ -106,18 +99,10 @@ const Photo = ({
   description: string;
   className?: string;
 }) => (
-  <div
-    className={`p-2 border-[1px] h-full rounded-sm inline-block bg-white shadow-xl pointer-events-none ${
-      className ?? ""
-    }`}
-  >
+  <div className={`polaroid-container ${className ?? ""}`}>
     <div className="polaroid">
       <Image src={source} width={300} height={400} alt={alt} />
     </div>
-    <p
-      className={`px-1 text-center !text-3xl !my-1 ${handwrittenFont.className}`}
-    >
-      {description}
-    </p>
+    <p className={handwrittenFont.className}>{description}</p>
   </div>
 );

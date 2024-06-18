@@ -17,14 +17,10 @@
 }
 
 body {
-  --teal: #0c6058;
-  --background: #fffefc;
+  --background: #fdfcfa;
 
-  color: rgb(var(--foreground-rgb));
   background: var(--background);
-}
-
-body {
+  @apply text-gray-800;
   max-width: 100%;
   overflow-x: hidden;
 }
@@ -55,7 +51,7 @@ h3 {
 }
 
 p {
-  @apply text-zinc-700;
+  @apply text-gray-700;
 }
 
 hr {
@@ -66,114 +62,19 @@ section {
   @apply mt-20;
 }
 
-#hero-cta {
-  @apply text-teal-700 bg-teal-100 px-4 py-2 font-medium text-base rounded-md pointer-events-none animate-bounce;
-}
-
 a {
   @apply text-teal-700 hover:underline hover:decoration-teal-800;
 }
 
 ul {
-  @apply text-zinc-700;
-}
-
-#about p {
-  @apply lg:text-lg mt-3;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+  @apply text-gray-700;
 }
 
 header {
   position: relative;
   z-index: 0;
 
-  @apply h-screen lg:h-[300vh];
-}
-
-#hero-wrapper-parallax {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-
-  @apply relative lg:fixed;
-}
-
-#hero-bg-wrapper {
-  color: #76c6e9;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-
-  background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 15.347 39.647 14 50 14c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 13.278 60.562 12 50 12c-10.626 0-16.855 1.397-26.66 5.063l-1.767.662c-2.475.923-4.66 1.674-6.724 2.275h6.335zm0-20C13.258 2.892 8.077 4 0 4V2c5.744 0 9.951-.574 14.85-2h6.334zM77.38 0C85.239 2.966 90.502 4 100 4V2c-6.842 0-11.386-.542-16.396-2h-6.225zM0 14c8.44 0 13.718-1.21 22.272-4.402l1.768-.661C33.64 5.347 39.647 4 50 4c10.271 0 15.362 1.222 24.629 4.928C84.112 12.722 89.438 14 100 14v-2c-10.271 0-15.362-1.222-24.629-4.928C65.888 3.278 60.562 2 50 2 39.374 2 33.145 3.397 23.34 7.063l-1.767.662C13.223 10.84 8.163 12 0 12v2z' fill='%23ffffff' fill-opacity='0.22' fill-rule='evenodd'/%3E%3C/svg%3E");
-
-  @apply h-screen lg:h-screen;
-}
-
-#hero-content {
-  z-index: 10;
-  position: absolute;
-  top: 50%;
-  right: 50%;
-  transform: translate(50%, -50%);
-
-  @apply max-w-screen-lg lg:max-w-screen-xl mx-auto px-6 lg:px-10 w-full pointer-events-auto;
-}
-
-#hero-headline {
-  @apply text-xl md:text-5xl font-mono mb-4;
-}
-
-#hero-intro {
-  @apply mb-4;
-}
-
-#hero-content #socials {
-  @apply mb-8;
-}
-
-#content {
-  @apply max-w-screen-lg mx-auto px-6 md:px-12 lg:px-16 pt-16 lg:pt-32 pb-0;
-}
-
-#project-showcase {
-  @apply mt-10 lg:mt-12 flex flex-col gap-[4rem] lg:gap-[6rem];
-}
-
-#project-showcase h3 {
-  @apply text-2xl lg:text-3xl mb-2 lg:mb-0;
-}
-
-#project-image {
-  @apply rounded-md shadow-none lg:shadow-xl;
-}
-
-#project-details {
-  background: var(--background);
-  @apply w-full lg:w-[70%];
-}
-
-#project-summary {
-  @apply flex flex-col gap-3 text-zinc-700 text-base;
-}
-
-#project-summary a {
-  @apply hover:underline;
-}
-
-#technologies a {
-  @apply border-[1px] rounded-md p-1 leading-[2.25rem];
-}
-
-#technologies span {
-  @apply text-gray-500 text-sm font-normal border-[1px] rounded-md px-2 leading-9 m-1 inline-block;
+  @apply h-screen lg:h-[200vh];
 }
 
 footer {
@@ -188,20 +89,108 @@ footer {
   @apply pt-[18rem] lg:pt-[24rem] pb-16;
 }
 
-footer a {
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.hero-wrapper-parallax {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  @apply relative lg:fixed;
+}
+
+.hero-bg-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 15.347 39.647 14 50 14c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 13.278 60.562 12 50 12c-10.626 0-16.855 1.397-26.66 5.063l-1.767.662c-2.475.923-4.66 1.674-6.724 2.275h6.335zm0-20C13.258 2.892 8.077 4 0 4V2c5.744 0 9.951-.574 14.85-2h6.334zM77.38 0C85.239 2.966 90.502 4 100 4V2c-6.842 0-11.386-.542-16.396-2h-6.225zM0 14c8.44 0 13.718-1.21 22.272-4.402l1.768-.661C33.64 5.347 39.647 4 50 4c10.271 0 15.362 1.222 24.629 4.928C84.112 12.722 89.438 14 100 14v-2c-10.271 0-15.362-1.222-24.629-4.928C65.888 3.278 60.562 2 50 2 39.374 2 33.145 3.397 23.34 7.063l-1.767.662C13.223 10.84 8.163 12 0 12v2z' fill='%23ffffff' fill-opacity='0.22' fill-rule='evenodd'/%3E%3C/svg%3E");
+
+  @apply h-screen lg:h-screen;
+}
+
+.hero-content {
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+
+  @apply max-w-screen-lg lg:max-w-screen-xl mx-auto px-6 lg:px-10 w-full pointer-events-auto;
+}
+
+.hero-headline {
+  @apply text-xl md:text-5xl font-mono mb-4;
+}
+
+.hero-intro {
+  @apply mb-4;
+}
+
+.hero-cta {
+  @apply text-teal-700 bg-teal-100 px-4 py-2 font-medium text-base rounded-md pointer-events-none animate-bounce;
+}
+
+#page-contents {
+  @apply max-w-screen-lg mx-auto px-6 md:px-12 lg:px-16 pt-16 lg:pt-32 pb-0;
+}
+
+#about p {
+  @apply lg:text-lg mt-3;
+}
+
+.project-showcase {
+  @apply mt-10 lg:mt-12 flex flex-col gap-[4rem] lg:gap-[6rem];
+}
+
+.project-showcase h3 {
+  @apply text-2xl lg:text-3xl mb-2 lg:mb-0;
+}
+
+.project-image {
+  @apply rounded-md shadow-xl;
+}
+
+.project-title {
+  @apply hover:underline hover:decoration-teal-700;
+}
+
+.project-container {
+  @apply mt-4 flex flex-col lg:flex-row gap-6;
+}
+
+.project-details {
+  @apply w-full lg:w-[70%];
+}
+
+.project-summary {
+  @apply flex flex-col gap-3 text-gray-800 text-base;
+}
+
+.project-summary a {
   @apply hover:underline;
 }
 
-footer #socials {
-  @apply gap-4;
+.technologies span {
+  @apply text-gray-600 text-sm font-mono ring-[1px] ring-zinc-200 rounded-md px-2 leading-8 mr-2 my-1 inline-block;
 }
 
-#footer-container {
-  @apply max-w-screen-lg mx-auto flex flex-col lg:flex-row lg:items-center justify-between px-4 gap-10 lg:gap-0;
+.polaroid-gallery {
+  @apply mt-10 px-5 lg:px-0 items-center flex flex-col sm:flex-row gap-10;
 }
 
-#technology-name {
-  @apply font-mono;
+.polaroid-container {
+  @apply p-2 border-[1px] h-full max-w-[300px] rounded-sm inline-block bg-white shadow-lg pointer-events-none;
+}
+
+.polaroid-container p {
+  @apply px-1 text-center !text-2xl lg:!text-3xl !my-1;
 }
 
 .polaroid {
@@ -226,4 +215,8 @@ footer #socials {
   top: 0;
   left: 0;
   @apply block;
+}
+
+.footer-container {
+  @apply max-w-screen-lg mx-auto flex flex-col lg:flex-row lg:items-center justify-between px-4 gap-10 lg:gap-0;
 }
