@@ -1,6 +1,10 @@
 import Link from "next/link";
 import { useMemo } from "react";
 import { TechStack } from "./TechStack";
+import Image from "next/image";
+
+import { Reenie_Beanie } from "next/font/google";
+const handwrittenFont = Reenie_Beanie({ weight: "400", subsets: ["latin"] });
 
 export const About = () => {
   const date = useMemo(() => new Date().toDateString(), []);
@@ -59,11 +63,67 @@ export const About = () => {
         ]}
       />
       <p>
-        When I’m not writing code you can find me working out (gym/cycling),
-        playing video games (Currently playing: Age Of Empires IV, Forza Horizon
-        5), planning the next travel destination, or thinking about what to
-        learn next.
+        When I’m not writing code, you can find me working out (gym/cycling),
+        playing games (Age Of Empires IV, Forza Horizon 5, Magic: The
+        Gathering), planning the next travel destination, or thinking about what
+        to learn next. By the way, here’s what I look like:
       </p>
+      <div
+        id="photos"
+        className="mt-10 px-5 lg:px-0 flex flex-col lg:flex-row gap-10"
+      >
+        <Photo
+          source="/pictures/mexico.jpg"
+          alt="Picture of me in a Café in México City, México"
+          description="México City 2023"
+          className="rotate-[-2deg]"
+        />
+        <Photo
+          source="/pictures/queenstown.jpg"
+          alt="Picture of me with a mountain bike in Queenstown, New Zealand"
+          description="Queenstown, NZ 2021"
+          className="rotate-[1deg]"
+        />
+        <Photo
+          source="/pictures/yosemite.jpg"
+          alt="Picture of me around Yosemite, California"
+          description="California 2019"
+          className="rotate-[3deg]"
+        />
+      </div>
     </section>
   );
 };
+
+const Photo = ({
+  source,
+  alt,
+  description,
+  className,
+}: {
+  source: string;
+  alt: string;
+  description: string;
+  className?: string;
+}) => (
+  <div
+    className={`p-2 border-[1px] h-full rounded-sm inline-block bg-white shadow-xl pointer-events-none ${
+      className ?? ""
+    }`}
+  >
+    <div className="polaroid">
+      <Image
+        src={source}
+        width={300}
+        height={400}
+        alt={alt}
+        className="rounded-sm w-full polaroid"
+      />
+    </div>
+    <p
+      className={`px-1 text-center !text-3xl !my-1 ${handwrittenFont.className}`}
+    >
+      {description}
+    </p>
+  </div>
+);

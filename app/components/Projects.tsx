@@ -236,7 +236,7 @@ const Project = ({ project }: { project: ProjectType }) => {
 };
 
 export const Projects = () => (
-  <section id="projects" className="pt-10">
+  <section id="projects">
     <h2>Portfolio</h2>
     <hr />
     <p className="lg:text-lg">

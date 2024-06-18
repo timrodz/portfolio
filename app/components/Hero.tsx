@@ -1,15 +1,17 @@
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import {
+  AnimatePresence,
   cubicBezier,
   motion,
   useMotionValue,
+  useMotionValueEvent,
   useScroll,
   useTime,
   useTransform,
 } from "framer-motion";
 import Link from "next/link";
 import { degreesToRadians, mix, progress } from "popmotion";
-import { Fragment, useEffect, useLayoutEffect, useRef } from "react";
+import { Fragment, useEffect, useLayoutEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { Socials } from "./Socials";
 
@@ -78,10 +80,11 @@ const Scene = ({ numStars = 100 }) => {
 };
 
 export const Hero = () => {
+  const [showDrag, showDragSet] = useState(true);
   const heroDrag = useMotionValue(0);
   const backgroundColor = useTransform(
     heroDrag,
-    [-100, 0, 100],
+    [-300, 0, 300],
     ["#85eed9", "#85eee2", "#85eaee"]
   );
   const heroTextColor = useTransform(
@@ -104,26 +107,46 @@ export const Hero = () => {
             color: heroTextColor,
           }}
         >
+          <p className="text-teal-700 ml-4 font-medium">Hi, I&apos;m</p>
           <motion.h1
             id="hero-title"
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}
             whileHover={{ scale: 1.05 }}
             style={{ x: heroDrag }}
+            onDragStart={() => showDragSet(false)}
+            onDragEnd={() => showDragSet(true)}
           >
-            Juan Alejandro Morais
+            Juan Alejandro{" "}
+            <span className="relative">
+              <AnimatePresence>
+                {showDrag && (
+                  <motion.span
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className="-z-10 w-[74px] absolute top-0 right-0 -rotate-[10deg] lg:translate-y-1/3 translate-x-[120%] text-xs font-normal p-2 bg-teal-100 rounded-md"
+                  >
+                    <span className="font-mono">←</span> drag me
+                  </motion.span>
+                )}
+              </AnimatePresence>
+              Morais
+            </span>
           </motion.h1>
           <motion.p id="hero-headline" style={{ color: heroTextColorLight }}>
             {'creative_dev(["web", "3D"])'}
           </motion.p>
           <Socials />
-          {/* <pre className="text-[0.5rem] mb-4">
-            Psst! Try dragging my name around...
-          </pre> */}
-          <Link href="#projects" id="hero-cta">
-            See my work below <span className="font-mono">↓</span>
-          </Link>
         </motion.div>
+        <div
+          id="hero-cta-container"
+          className="absolute bottom-8 right-1/2 translate-y-1/2 translate-x-[50%]"
+        >
+          <p id="hero-cta" className="animate-bounce">
+            scroll to continue <span className="font-mono">↓</span>
+          </p>
+        </div>
       </motion.div>
       <Canvas
         id="canvas-container"
