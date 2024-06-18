@@ -7,7 +7,7 @@ import { Reenie_Beanie } from "next/font/google";
 const handwrittenFont = Reenie_Beanie({ weight: "400", subsets: ["latin"] });
 
 export const About = () => {
-  const date = useMemo(() => new Date().toDateString(), []);
+  const date = useMemo(() => new Date().toLocaleDateString("en-nz"), []);
 
   return (
     <section id="about">
