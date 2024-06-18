@@ -45,7 +45,7 @@ const Scene = ({ numStars = 100 }) => {
   const yAngle = useTransform(
     scrollYProgress,
     [0, 1],
-    [degreesToRadians(20), degreesToRadians(180)]
+    [degreesToRadians(45), degreesToRadians(180)]
   );
   const distance = useTransform(scrollYProgress, [0, 1], [10, 5]);
   const time = useTime();
@@ -125,13 +125,11 @@ export const Hero = () => {
           </motion.p>
           <Socials />
         </motion.div>
-        {width > 1024 && (
-          <div className="hero-cta-container absolute bottom-0 right-1/2 translate-y-1/2 translate-x-[50%] mb-32 lg:mb-12">
-            <p className="hero-cta">
-              scroll to continue <span className="font-mono">↓</span>
-            </p>
-          </div>
-        )}
+        <div className="hero-cta-container absolute bottom-0 right-1/2 translate-y-1/2 translate-x-[50%] mb-48 lg:mb-12">
+          <p className="hero-cta">
+            scroll to continue <span className="font-mono">↓</span>
+          </p>
+        </div>
       </motion.div>
       <Canvas
         gl={{ antialias: false, toneMapping: THREE.NoToneMapping }}

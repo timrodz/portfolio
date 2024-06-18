@@ -1,4 +1,4 @@
-import { type TechnologyName, TechnologyNameUrl } from "data";
+import { type TechnologyName } from "data";
 import Image from "next/image";
 import Link from "next/link";
 import { Fragment } from "react";
@@ -29,11 +29,12 @@ const projects: ProjectType[] = [
     technologies: [
       "React",
       "TypeScript",
-      "NextJS",
+      "Next.js",
       "AWS",
       "Unity",
       "C#",
       "ExpressJS",
+      "Tailwind CSS",
     ],
     imageAlt: 'Image of Muhammad Ali with text "The Next Legends"',
     company: "Futureverse",
@@ -61,7 +62,15 @@ const projects: ProjectType[] = [
     url: "https://opensea.io/collection/partybear/",
     imageUrl: "/projects/pb-swappables.jpg",
     imageAlt: 'A Party Bear (NFT) with text saying "Clear The Runway"',
-    technologies: ["React", "TypeScript", "NextJS", "AWS", "Unity", "C#"],
+    technologies: [
+      "React",
+      "TypeScript",
+      "Next.js",
+      "AWS",
+      "Unity",
+      "C#",
+      "Tailwind CSS",
+    ],
     company: "Futureverse",
     role: "Lead Developer",
     summary: (
@@ -82,6 +91,37 @@ const projects: ProjectType[] = [
     ),
   },
   {
+    title: "MTG Friends",
+    year: "2023",
+    type: "Tournament hosting app for Magic: The Gathering",
+    slug: "mtg-friends",
+    url: "https://mtg-friends.fly.dev/tournaments",
+    imageUrl: "/projects/mtg-friends.jpg",
+    imageAlt: "Screenshot of MTG Friends",
+    technologies: ["Elixir", "Phoenix", "PostgreSQL", "Tailwind CSS"],
+    summary: (
+      <Fragment>
+        <p>
+          When I visited friends back in my hometown, they introduced me to
+          Magic: The Gathering, a trading card game with lots of deep lore,
+          playing formats, and fun. I really liked the game, and went to lots of
+          local tournaments. However, I saw one problem: hosting tournaments was
+          very difficult: we were playing a format called &quot;Commander&quot;,
+          which involves 4 players paired against each other.
+        </p>
+        <p>
+          My solution? To build a tournament organizing tool which let hosts add
+          participants, create round pairings (with complex algorithms), and
+          easily determine round + tournament winners. This was also an
+          opportunity for me to learn Elixir, a programming language I worked
+          with at a previous role. Funnily enough, I didn’t like Elixir at
+          first, but now it’s my favorite programming language!
+        </p>
+        <p>MTG Friends is now being used by multiple stores across Panama.</p>
+      </Fragment>
+    ),
+  },
+  {
     title: "Roast My Site",
     year: "2023",
     type: "Micro SaaS Startup",
@@ -90,7 +130,13 @@ const projects: ProjectType[] = [
     imageUrl: "/projects/roastmysite.png",
     imageAlt:
       'Image of the website saying "Your website’s roasts are now public"',
-    technologies: ["React", "TypeScript", "NextJS", "PostgreSQL"],
+    technologies: [
+      "React",
+      "TypeScript",
+      "Next.js",
+      "PostgreSQL",
+      "Tailwind CSS",
+    ],
     summary: (
       <Fragment>
         <p>

@@ -2,7 +2,7 @@ import "../app/globals.css";
 
 export type TechnologyName =
   | "Elixir"
-  | "NextJS"
+  | "Next.js"
   | "Unity"
   | "C#"
   | "AWS"
@@ -11,10 +11,12 @@ export type TechnologyName =
   | "ExpressJS"
   | "Azure"
   | "PostgreSQL"
-  | "Python";
+  | "Python"
+  | "Phoenix"
+  | "Tailwind CSS";
 
 export const TechnologyNameUrl: Record<TechnologyName, string> = {
-  NextJS: "https://nextjs.org/",
+  "Next.js": "https://nextjs.org/",
   Unity: "https://unity.com/",
   "C#": "https://learn.microsoft.com/en-us/dotnet/csharp/",
   AWS: "https://aws.amazon.com/",
@@ -25,6 +27,8 @@ export const TechnologyNameUrl: Record<TechnologyName, string> = {
   PostgreSQL: "https://www.postgresql.org/",
   Python: "https://www.python.org/",
   Elixir: "https://elixir-lang.org/",
+  Phoenix: "https://www.phoenixframework.org/",
+  "Tailwind CSS": "https://tailwindcss.com/",
 };
 
 const socials = [

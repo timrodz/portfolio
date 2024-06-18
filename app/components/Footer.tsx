@@ -14,11 +14,19 @@ export const Footer = () => {
             Copyright &copy; {new Date().getFullYear()} Juan Alejandro Morais.
             This site was built with{" "}
             <Link
-              href={TechnologyNameUrl["NextJS"]}
+              href={TechnologyNameUrl["Next.js"]}
               rel="noopener noreferrer"
               target="_blank"
             >
-              NextJS
+              Next.js
+            </Link>{" "}
+            and{" "}
+            <Link
+              href={TechnologyNameUrl["Tailwind CSS"]}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Tailwind CSS
             </Link>
             .
           </p>

@@ -60,7 +60,7 @@ export const About = () => {
         technologies={[
           "React",
           "TypeScript",
-          "NextJS",
+          "Next.js",
           "Elixir",
           "PostgreSQL",
           "AWS",
