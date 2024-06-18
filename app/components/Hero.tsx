@@ -1,25 +1,23 @@
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { useScreenSize } from "@hooks/useScreenSize";
+import { Canvas, useFrame } from "@react-three/fiber";
 import {
-  AnimatePresence,
-  cubicBezier,
   motion,
   useMotionValue,
-  useMotionValueEvent,
   useScroll,
   useTime,
   useTransform,
 } from "framer-motion";
-import Link from "next/link";
 import { degreesToRadians, mix, progress } from "popmotion";
-import { Fragment, useEffect, useLayoutEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useMemo, useRef } from "react";
 import * as THREE from "three";
 import { Socials } from "./Socials";
 
 const StarMesh = ({ p, color }: { p: number; color: THREE.Color | string }) => {
+  const { width } = useScreenSize();
   const ref = useRef<THREE.Object3D>(null);
 
   useEffect(() => {
-    const distance = mix(6, 13.5, Math.random());
+    const distance = mix(width > 1024 ? 6 : 4, 16, Math.random());
     const yAngle = mix(
       degreesToRadians(80),
       degreesToRadians(100),
@@ -27,7 +25,7 @@ const StarMesh = ({ p, color }: { p: number; color: THREE.Color | string }) => {
     );
     const xAngle = degreesToRadians(360) * p;
     ref.current!.position.setFromSphericalCoords(distance, yAngle, xAngle);
-  }, [p]);
+  }, [p, width]);
 
   return (
     // @ts-expect-error it simply works
@@ -39,12 +37,15 @@ const StarMesh = ({ p, color }: { p: number; color: THREE.Color | string }) => {
 };
 
 const Scene = ({ numStars = 100 }) => {
+  const { width } = useScreenSize();
+  const yAngleMult = useMemo(() => (width > 1024 ? 1.5 : 10), [width]);
+  const icosahedronRadius = useMemo(() => (width > 1024 ? 5 : 3), [width]);
+
   const { scrollYProgress } = useScroll();
   const yAngle = useTransform(
     scrollYProgress,
     [0, 1],
-    [degreesToRadians(45), degreesToRadians(180)],
-    { ease: cubicBezier(0.17, 0.67, 0.83, 0.67) }
+    [degreesToRadians(20), degreesToRadians(180)]
   );
   const distance = useTransform(scrollYProgress, [0, 1], [10, 5]);
   const time = useTime();
@@ -54,7 +55,7 @@ const Scene = ({ numStars = 100 }) => {
   useFrame(({ camera }) => {
     camera.position.setFromSphericalCoords(
       distance.get(),
-      yAngle.get(),
+      yAngle.get() * yAngleMult,
       time.get() * 0.0002
     );
     camera.updateProjectionMatrix();
@@ -71,7 +72,7 @@ const Scene = ({ numStars = 100 }) => {
   return (
     <Fragment>
       <mesh rotation-x={0.2}>
-        <icosahedronGeometry args={[5]} />
+        <icosahedronGeometry args={[icosahedronRadius]} />
         <meshBasicMaterial wireframe color={color} />
       </mesh>
       {stars}
@@ -80,7 +81,6 @@ const Scene = ({ numStars = 100 }) => {
 };
 
 export const Hero = () => {
-  const [showDrag, showDragSet] = useState(true);
   const heroDrag = useMotionValue(0);
   const backgroundColor = useTransform(
     heroDrag,
@@ -107,32 +107,14 @@ export const Hero = () => {
             color: heroTextColor,
           }}
         >
-          <p className="text-teal-700 ml-4 font-medium">Hi, I&apos;m</p>
           <motion.h1
             id="hero-title"
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}
             whileHover={{ scale: 1.05 }}
             style={{ x: heroDrag }}
-            onDragStart={() => showDragSet(false)}
-            onDragEnd={() => showDragSet(true)}
           >
-            Juan Alejandro{" "}
-            <span className="relative">
-              <AnimatePresence>
-                {showDrag && (
-                  <motion.span
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    className="-z-10 w-[74px] absolute top-0 right-0 -rotate-[10deg] lg:translate-y-1/3 translate-x-[120%] text-xs font-normal p-2 bg-teal-100 rounded-md"
-                  >
-                    <span className="font-mono">←</span> drag me
-                  </motion.span>
-                )}
-              </AnimatePresence>
-              Morais
-            </span>
+            Juan Alejandro Morais
           </motion.h1>
           <motion.p id="hero-headline" style={{ color: heroTextColorLight }}>
             {'creative_dev(["web", "3D"])'}
@@ -141,9 +123,9 @@ export const Hero = () => {
         </motion.div>
         <div
           id="hero-cta-container"
-          className="absolute bottom-8 right-1/2 translate-y-1/2 translate-x-[50%]"
+          className="absolute bottom-0 right-1/2 translate-y-1/2 translate-x-[50%] mb-32 lg:mb-12"
         >
-          <p id="hero-cta" className="animate-bounce">
+          <p id="hero-cta">
             scroll to continue <span className="font-mono">↓</span>
           </p>
         </div>
@@ -155,6 +137,7 @@ export const Hero = () => {
         // Keep the DPI low so the canvas emulates a pixel art look
         // Normally this would't be needed but seems like iOS devices change the DPR to 1 when scrolling
         dpr={[0.25, 0.35]}
+        className="!h-screen"
       >
         <Scene />
       </Canvas>
