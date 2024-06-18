@@ -115,7 +115,7 @@ footer {
   @apply h-screen lg:h-screen;
 }
 
-.hero-content {
+.hero-container {
   z-index: 10;
   position: absolute;
   top: 50%;
@@ -123,6 +123,10 @@ footer {
   transform: translate(50%, -50%);
 
   @apply max-w-screen-lg lg:max-w-screen-xl mx-auto px-6 lg:px-10 w-full pointer-events-auto;
+}
+
+.hero-container .socials {
+  @apply ml-1;
 }
 
 .hero-headline {

@@ -103,7 +103,7 @@ export const Hero = () => {
     <div className="hero-wrapper-parallax">
       <motion.div className="hero-bg-wrapper" style={{ backgroundColor }}>
         <motion.div
-          className="hero-content"
+          className="hero-container"
           style={{
             color: heroTextColor,
           }}
