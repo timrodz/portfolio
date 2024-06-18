@@ -112,13 +112,7 @@ const Photo = ({
     }`}
   >
     <div className="polaroid">
-      <Image
-        src={source}
-        width={300}
-        height={400}
-        alt={alt}
-        className="rounded-sm w-full polaroid"
-      />
+      <Image src={source} width={300} height={400} alt={alt} />
     </div>
     <p
       className={`px-1 text-center !text-3xl !my-1 ${handwrittenFont.className}`}
