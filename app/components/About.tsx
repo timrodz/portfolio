@@ -39,14 +39,22 @@ export const About = () => {
         naturally I’m very happy I work with them on a daily basis.
       </p>
       <p>
-        I strongly believe tools are just that: tools. For that reason, I don’t
-        have strong opinions about this or that technology; everything has a
-        purpose, even if that means the code I wrote years ago doesn’t look
-        great today. That being said,{" "}
-        <span className="font-semibold">
-          these are the tools I enjoy working with the most (as of {date})
-        </span>
-        :
+        Software engineering aside, you can find me outdoors, working out
+        (gym/cycling), playing games (Age Of Empires IV, Forza Horizon 5, Magic:
+        The Gathering), planning the next travel destination, or thinking about
+        what to learn next. I’m currently learning Portuguese, music theory, and
+        content creation.
+      </p>
+      <p>
+        When it comes to tools and technologies, I believe they’re there to help
+        you solve problems, nothing else. For that reason, I don’t have strong
+        opinions about the choices a developer makes when choosing a tech stack.
+        Everything has a purpose; if it helped you solve a problem, that’s what
+        matters.
+      </p>
+      <p>
+        With that said, these are my favorite tools & technologies (as of {date}
+        ):
       </p>
       <TechStack
         technologies={[
@@ -58,11 +66,9 @@ export const About = () => {
           "AWS",
         ]}
       />
-      <p>
-        When I’m not writing code, you can find me outdoors, working out
-        (gym/cycling), playing games (Age Of Empires IV, Forza Horizon 5, Magic:
-        The Gathering), planning the next travel destination, or thinking about
-        what to learn next.
+      <p className="!mt-8">
+        P.S. I’m definitely not an AI. To prove it, here are some pictures of me
+        over the past few years
       </p>
       <div className="polaroid-gallery">
         <PolaroidPhoto

@@ -186,7 +186,7 @@ footer {
 }
 
 .polaroid-gallery {
-  @apply mt-10 px-5 lg:px-0 items-center flex flex-col sm:flex-row gap-10;
+  @apply mt-6 px-5 lg:px-0 items-center flex flex-col sm:flex-row gap-10;
 }
 
 .polaroid-container {

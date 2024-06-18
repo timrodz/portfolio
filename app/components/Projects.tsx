@@ -237,7 +237,7 @@ export const Projects = () => (
     <hr />
     <p className="lg:text-lg">
       {
-        "Below are exciting projects I have created and/or contributed to during my career. Due to the nature of some industries, certain projects are under NDA agreements, so I cannot show everything I’ve worked on."
+        "Below are exciting projects I have created and/or contributed to during my career. Due to the nature of some industries, certain projects are under NDA agreements, so I can’t show everything I’ve worked on."
       }
     </p>
     <div className="project-showcase">
