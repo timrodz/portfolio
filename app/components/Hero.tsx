@@ -81,6 +81,7 @@ const Scene = ({ numStars = 100 }) => {
 };
 
 export const Hero = () => {
+  const { width } = useScreenSize();
   const heroDrag = useMotionValue(0);
   const backgroundColor = useTransform(
     heroDrag,
@@ -124,11 +125,13 @@ export const Hero = () => {
           </motion.p>
           <Socials />
         </motion.div>
-        <div className="hero-cta-container absolute bottom-0 right-1/2 translate-y-1/2 translate-x-[50%] mb-32 lg:mb-12">
-          <p className="hero-cta">
-            scroll to continue <span className="font-mono">↓</span>
-          </p>
-        </div>
+        {width > 1024 && (
+          <div className="hero-cta-container absolute bottom-0 right-1/2 translate-y-1/2 translate-x-[50%] mb-32 lg:mb-12">
+            <p className="hero-cta">
+              scroll to continue <span className="font-mono">↓</span>
+            </p>
+          </div>
+        )}
       </motion.div>
       <Canvas
         gl={{ antialias: false, toneMapping: THREE.NoToneMapping }}
