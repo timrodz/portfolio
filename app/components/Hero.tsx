@@ -12,76 +12,7 @@ import { Fragment, useEffect, useMemo, useRef } from "react";
 import * as THREE from "three";
 import { Socials } from "./Socials";
 
-const StarMesh = ({ p, color }: { p: number; color: THREE.Color | string }) => {
-  const { width } = useScreenSize();
-  const ref = useRef<THREE.Object3D>(null);
-
-  useEffect(() => {
-    const distance = mix(width > 1024 ? 6 : 4, 16, Math.random());
-    const yAngle = mix(
-      degreesToRadians(80),
-      degreesToRadians(100),
-      Math.random()
-    );
-    const xAngle = degreesToRadians(360) * p;
-    ref.current!.position.setFromSphericalCoords(distance, yAngle, xAngle);
-  }, [p, width]);
-
-  return (
-    // @ts-expect-error it simply works
-    <mesh ref={ref}>
-      <boxGeometry args={[0.05, 0.05, 0.05]} />
-      <meshBasicMaterial wireframe color={color} />
-    </mesh>
-  );
-};
-
-const Scene = ({ numStars = 100 }) => {
-  const { width } = useScreenSize();
-  const yAngleMult = useMemo(() => (width > 1024 ? 1.5 : 10), [width]);
-  const icosahedronRadius = useMemo(() => (width > 1024 ? 5 : 3), [width]);
-
-  const { scrollYProgress } = useScroll();
-  const yAngle = useTransform(
-    scrollYProgress,
-    [0, 1],
-    [degreesToRadians(45), degreesToRadians(180)]
-  );
-  const distance = useTransform(scrollYProgress, [0, 1], [10, 5]);
-  const time = useTime();
-
-  const color = "#adf3ea";
-
-  useFrame(({ camera }) => {
-    camera.position.setFromSphericalCoords(
-      distance.get(),
-      yAngle.get() * yAngleMult,
-      time.get() * 0.0002
-    );
-    camera.updateProjectionMatrix();
-    camera.lookAt(0, 0, 0);
-  });
-
-  const stars = [];
-  for (let i = 0; i < numStars; i++) {
-    stars.push(
-      <StarMesh key={`star-${i}`} p={progress(0, numStars, i)} color={color} />
-    );
-  }
-
-  return (
-    <Fragment>
-      <mesh rotation-x={0.2}>
-        <icosahedronGeometry args={[icosahedronRadius]} />
-        <meshBasicMaterial wireframe color={color} />
-      </mesh>
-      {stars}
-    </Fragment>
-  );
-};
-
 export const Hero = () => {
-  const { width } = useScreenSize();
   const heroDrag = useMotionValue(0);
   const backgroundColor = useTransform(
     heroDrag,
@@ -139,8 +70,76 @@ export const Hero = () => {
         dpr={[0.25, 0.35]}
         className="!h-screen"
       >
-        <Scene />
+        <CanvasScene />
       </Canvas>
     </div>
+  );
+};
+
+const StarMesh = ({ p, color }: { p: number; color: THREE.Color | string }) => {
+  const { width } = useScreenSize();
+  const ref = useRef<THREE.Object3D>(null);
+
+  useEffect(() => {
+    const distance = mix(width > 1024 ? 6 : 4, 16, Math.random());
+    const yAngle = mix(
+      degreesToRadians(80),
+      degreesToRadians(100),
+      Math.random()
+    );
+    const xAngle = degreesToRadians(360) * p;
+    ref.current!.position.setFromSphericalCoords(distance, yAngle, xAngle);
+  }, [p, width]);
+
+  return (
+    // @ts-expect-error it simply works
+    <mesh ref={ref}>
+      <sphereGeometry args={[0.04]} />
+      <meshBasicMaterial color={color} />
+    </mesh>
+  );
+};
+
+const CanvasScene = ({ numStars = 100 }) => {
+  const { width } = useScreenSize();
+  const yAngleMult = useMemo(() => (width > 1024 ? 1.5 : 10), [width]);
+  const icosahedronRadius = useMemo(() => (width > 1024 ? 5 : 3), [width]);
+
+  const { scrollYProgress } = useScroll();
+  const yAngle = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [degreesToRadians(45), degreesToRadians(180)]
+  );
+  const distance = useTransform(scrollYProgress, [0, 1], [10, 5]);
+  const time = useTime();
+
+  const color = "#adf3ea";
+
+  useFrame(({ camera }) => {
+    camera.position.setFromSphericalCoords(
+      distance.get(),
+      yAngle.get() * yAngleMult,
+      time.get() * 0.0002
+    );
+    camera.updateProjectionMatrix();
+    camera.lookAt(0, 0, 0);
+  });
+
+  const stars = [];
+  for (let i = 0; i < numStars; i++) {
+    stars.push(
+      <StarMesh key={`star-${i}`} p={progress(0, numStars, i)} color={color} />
+    );
+  }
+
+  return (
+    <Fragment>
+      <mesh rotation-x={0.2}>
+        <icosahedronGeometry args={[icosahedronRadius]} />
+        <meshBasicMaterial wireframe color={color} />
+      </mesh>
+      {stars}
+    </Fragment>
   );
 };
