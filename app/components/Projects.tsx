@@ -91,13 +91,13 @@ const projects: ProjectType[] = [
     ),
   },
   {
-    title: "MTG Friends",
+    title: "Tie Breaker",
     year: "2023",
-    type: "Tournament hosting app for Magic: The Gathering",
-    slug: "mtg-friends",
+    type: "Tournament hosting and management app (trading card games)",
+    slug: "tie-breaker",
     url: "https://mtg-friends.fly.dev/tournaments",
-    imageUrl: "/projects/mtg-friends.jpg",
-    imageAlt: "Screenshot of MTG Friends",
+    imageUrl: "/projects/tie-breaker.jpg",
+    imageAlt: "Tie Breaker logo",
     technologies: ["Elixir", "Phoenix", "PostgreSQL", "Tailwind CSS"],
     summary: (
       <Fragment>
@@ -117,7 +117,10 @@ const projects: ProjectType[] = [
           with at a previous role. Funnily enough, I didn’t like Elixir at
           first, but now it’s my favorite programming language!
         </p>
-        <p>MTG Friends is now being used by multiple stores across Panama.</p>
+        <p>
+          Tie Breaker is now being used by multiple stores across Panama; I’m
+          very grateful for their support.
+        </p>
       </Fragment>
     ),
   },
