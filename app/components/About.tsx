@@ -14,8 +14,8 @@ export const About = () => {
       <h2>Welcome 👋</h2>
       <hr />
       <p>
-        I’m a software engineer & digital nomad based in New Zealand, currently
-        working at{" "}
+        I’m a software engineer (6+ years of experience) & digital nomad based
+        in New Zealand, currently working at{" "}
         <Link href="https://www.futureverse.com/" target="_blank">
           Futureverse
         </Link>
