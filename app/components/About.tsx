@@ -30,7 +30,7 @@ export const About = () => {
           "https://docs.google.com/document/d/1SVf7G72m6miHjatK2mqOHYSvPPMcA991agUyubH33iU/edit?usp=sharing"
         }
         target="_blank"
-        className="cta-subtle inline-block mt-6 mb-4 text-xl"
+        className="cta-subtle text-center block lg:inline-block mt-6 mb-4"
       >
         <span className="font-mono">→</span> Click here to download my resume!
       </Link>
