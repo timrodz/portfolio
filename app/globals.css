@@ -20,7 +20,7 @@ body {
   --background: #fdfcfa;
 
   background: var(--background);
-  @apply text-gray-800;
+  @apply text-zinc-700;
   max-width: 100%;
   overflow-x: hidden;
 }
@@ -50,8 +50,12 @@ h3 {
   @apply text-3xl md:text-4xl text-teal-700 font-semibold mt-4 mb-3;
 }
 
+h4 {
+  @apply text-xl font-light;
+}
+
 p {
-  @apply text-gray-700;
+  @apply text-zinc-700;
 }
 
 hr {
@@ -137,8 +141,16 @@ footer {
   @apply mb-4;
 }
 
-.hero-cta {
-  @apply text-teal-700 bg-teal-100 px-4 py-2 font-medium text-base rounded-md pointer-events-none animate-bounce;
+.cta {
+  @apply text-teal-700 bg-teal-100 px-4 py-2 font-medium rounded-md;
+}
+
+.cta-subtle {
+  @apply text-teal-700 bg-teal-50 ring-teal-600 ring-[1px] px-4 py-2 font-medium rounded-md;
+}
+
+.hero-cta-container .cta {
+  @apply pointer-events-none animate-bounce;
 }
 
 #page-contents {
@@ -146,7 +158,11 @@ footer {
 }
 
 #about p {
-  @apply lg:text-lg mt-3;
+  @apply lg:text-lg mt-3 lg:mt-4;
+}
+
+#projects p {
+  @apply lg:text-lg mb-4 lg:mb-3;
 }
 
 .project-showcase {
@@ -154,7 +170,7 @@ footer {
 }
 
 .project-showcase h3 {
-  @apply text-2xl lg:text-3xl mb-2 lg:mb-0;
+  @apply text-2xl lg:text-3xl m-0;
 }
 
 .project-image {
@@ -166,7 +182,7 @@ footer {
 }
 
 .project-container {
-  @apply mt-4 flex flex-col lg:flex-row gap-6;
+  @apply mt-4 lg:mt-6 flex flex-col lg:flex-row gap-6;
 }
 
 .project-details {
@@ -174,7 +190,7 @@ footer {
 }
 
 .project-summary {
-  @apply flex flex-col gap-3 text-gray-800 text-base;
+  @apply text-base lg:text-lg;
 }
 
 .project-summary a {
@@ -182,7 +198,7 @@ footer {
 }
 
 .technologies span {
-  @apply text-gray-600 text-sm font-mono ring-[1px] ring-zinc-200 rounded-md px-2 leading-8 mr-2 my-1 inline-block;
+  @apply text-slate-500 text-sm font-mono bg-white ring-[1px] ring-slate-300 rounded-md px-2 leading-8 mr-2 my-1 inline-block text-center;
 }
 
 .polaroid-gallery {

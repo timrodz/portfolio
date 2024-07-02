@@ -57,7 +57,7 @@ export const Hero = () => {
           <Socials />
         </motion.div>
         <div className="hero-cta-container absolute bottom-0 right-1/2 translate-y-1/2 translate-x-[50%] mb-48 lg:mb-12">
-          <p className="hero-cta">
+          <p className="cta">
             scroll to continue <span className="font-mono">↓</span>
           </p>
         </div>

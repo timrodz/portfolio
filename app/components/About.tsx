@@ -11,7 +11,7 @@ export const About = () => {
 
   return (
     <section id="about">
-      <h2>Welcome 👋</h2>
+      <h2>Welcome 🦥</h2>
       <hr />
       <p>
         I’m a software engineer (6+ years of experience) & digital nomad based
@@ -20,14 +20,17 @@ export const About = () => {
           Futureverse
         </Link>
         . If you want to get in touch with me, please send me a message at{" "}
-        <Link href="mailto:timrodz@icloud.com">timrodz@icloud.com</Link>.
+        <Link href="mailto:timrodz@icloud.com" target="_blank">
+          timrodz@icloud.com
+        </Link>
+        .
       </p>
       <Link
         href={
           "https://docs.google.com/document/d/1SVf7G72m6miHjatK2mqOHYSvPPMcA991agUyubH33iU/edit?usp=sharing"
         }
         target="_blank"
-        className="hover:underline block mt-4 mb-8 font-medium text-lg"
+        className="cta-subtle inline-block mt-6 mb-4 text-xl"
       >
         <span className="font-mono">→</span> Click here to download my resume!
       </Link>
@@ -65,14 +68,14 @@ export const About = () => {
           "AWS",
         ]}
       />
-      <p className="!mt-8">
-        P.S. I’m definitely not an AI. To prove it, here are some pictures of me
-        over the past few years
+      <p className="!mt-6">
+        P.S. I’m definitely not a robot 🤖 To prove it, here are some pictures
+        of me over the past few years!
       </p>
-      <div className="polaroid-gallery">
+      <div id="polaroid-gallery" className="polaroid-gallery">
         <PolaroidPhoto
           source="/pictures/mexico.jpg"
-          alt="Picture of me in a Café in México City, México"
+          alt="Picture of me in a Café in Méxi co City, México"
           description="México City 2023"
           className="rotate-[-2deg]"
         />
@@ -88,6 +91,15 @@ export const About = () => {
           description="California 2019"
           className="rotate-[2deg]"
         />
+      </div>
+      <div className="mt-12 flex justify-center">
+        <Link
+          href="mailto:timrodz@icloud.com"
+          target="_blank"
+          className="cta-subtle"
+        >
+          Get in touch 👋
+        </Link>
       </div>
     </section>
   );

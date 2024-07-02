@@ -1,4 +1,4 @@
-import { TechnologyName } from "data";
+import { TechnologyName } from "@data";
 
 export const TechStack = ({
   technologies,
