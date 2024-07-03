@@ -8,7 +8,11 @@ const Project = ({ project }: { project: ProjectType }) => {
     <div id={`project-${project.slug}`}>
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
         <h3>
-          <Link href={project.url} target="_blank" className="project-title ">
+          <Link
+            href={`/projects/${project.slug}`}
+            target="_blank"
+            className="project-title "
+          >
             {project.title}
           </Link>
         </h3>
@@ -34,7 +38,7 @@ const Project = ({ project }: { project: ProjectType }) => {
           <Link
             href={`/projects/${project.slug}`}
             target="_blank"
-            className="font-medium block mt-4 mb-3"
+            className="text-lg font-medium block my-5"
           >
             <span className="font-mono">→</span> Click here to learn more
           </Link>
