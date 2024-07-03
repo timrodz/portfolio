@@ -32,7 +32,7 @@ const Project = ({ project }: { project: ProjectType }) => {
         <div className="project-details">
           <div className="project-summary">{project.summary}</div>
           <Link
-            href={project.url}
+            href={`/projects/${project.slug}`}
             target="_blank"
             className="font-medium block mt-4 mb-3"
           >

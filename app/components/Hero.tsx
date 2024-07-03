@@ -40,7 +40,7 @@ export const Hero = () => {
           }}
         >
           <motion.h1
-            className="hero-title"
+            className="hero-title hover:underline hover:cursor-pointer"
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}
             whileHover={{ scale: 1.05 }}

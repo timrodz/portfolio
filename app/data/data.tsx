@@ -13,7 +13,8 @@ export type TechnologyName =
   | "PostgreSQL"
   | "Python"
   | "Phoenix"
-  | "Tailwind CSS";
+  | "Tailwind CSS"
+  | "Flask";
 
 export const TechnologyNameUrl: Record<TechnologyName, string> = {
   "Next.js": "https://nextjs.org/",
@@ -29,12 +30,13 @@ export const TechnologyNameUrl: Record<TechnologyName, string> = {
   Elixir: "https://elixir-lang.org/",
   Phoenix: "https://www.phoenixframework.org/",
   "Tailwind CSS": "https://tailwindcss.com/",
+  Flask: "",
 };
 
 export const socials = [
   {
     name: "LinkedIn",
-    url: "https://www.linkedin.com/in/timrodz/",
+    url: "https://www.linkedin.com/in/timrodz",
     icon: "/icons/socials/linkedin.svg",
   },
   {
@@ -114,7 +116,8 @@ export type ProjectType = {
   imageAlt: string;
   technologies: TechnologyName[];
   summary: React.ReactNode;
-  year: number;
+  releaseYear?: number;
+  workingYears?: string;
   company?: string;
   role?: string;
   featured?: boolean;
@@ -124,10 +127,10 @@ export const projects: ProjectType[] = [
   {
     featured: true,
     title: "Party Bear: Swappables",
-    year: 2023,
-    type: "Web3 Project (Website)",
+    releaseYear: 2023,
+    type: "Web3 Project (Web App)",
     slug: "party-bear-swappables",
-    url: "https://opensea.io/collection/partybear/",
+    url: "https://opensea.io/collection/partybear",
     imageUrl: "/projects/pb-swappables.jpg",
     imageAlt: 'A Party Bear (NFT) with text saying "Clear The Runway"',
     technologies: [
@@ -161,13 +164,23 @@ export const projects: ProjectType[] = [
   {
     featured: true,
     title: "Sharesies",
-    year: 2020,
+    workingYears: "2020-2022",
     type: "Stock Investment Platform (SaaS/Fintech)",
     slug: "sharesies",
-    url: "https://www.sharesies.nz/",
+    url: "https://www.sharesies.nz",
     imageUrl: "/projects/sharesies.jpg",
-    imageAlt: "Screenshots of the Sharesies app",
-    technologies: ["TypeScript", "React", "Python", "C#", "PostgreSQL"],
+    imageAlt:
+      "Sharesies app showing 3 screens: investments, overall portfolio, and stock search",
+    technologies: [
+      "TypeScript",
+      "React",
+      "Python",
+      "C#",
+      "PostgreSQL",
+      "Flask",
+    ],
+    company: "Sharesies",
+    role: "Full Stack Engineer",
     summary: (
       <>
         <p>
@@ -195,10 +208,10 @@ export const projects: ProjectType[] = [
   },
   {
     title: "The Next Legends",
-    year: 2024,
-    type: "Web3 Project (Website + Videogame)",
+    releaseYear: 2024,
+    type: "Web3 Project (Web App + Videogame)",
     slug: "the-next-legends",
-    url: "https://www.thenextlegends.xyz/",
+    url: "https://www.thenextlegends.xyz",
     imageUrl: "/projects/tnl.jpg",
     technologies: [
       "React",
@@ -210,7 +223,7 @@ export const projects: ProjectType[] = [
       "ExpressJS",
       "Tailwind CSS",
     ],
-    imageAlt: 'Image of Muhammad Ali with text "The Next Legends"',
+    imageAlt: 'Muhammad Ali with text "The Next Legends"',
     company: "Futureverse",
     role: "Lead Developer",
     summary: (
@@ -231,12 +244,12 @@ export const projects: ProjectType[] = [
   {
     featured: true,
     title: "Tie Breaker",
-    year: 2023,
+    releaseYear: 2023,
     type: "Tournament management app for games (SaaS)",
     slug: "tie-breaker",
-    url: "https://mtg-friends.fly.dev/tournaments",
+    url: "https://mtg-friends.fly.dev",
     imageUrl: "/projects/tie-breaker.jpg",
-    imageAlt: "Tie Breaker logo",
+    imageAlt: "Trading Card Games made easy",
     technologies: ["Elixir", "Phoenix", "PostgreSQL", "Tailwind CSS"],
     summary: (
       <>
@@ -265,13 +278,12 @@ export const projects: ProjectType[] = [
   },
   {
     title: "Roast My Site",
-    year: 2023,
+    releaseYear: 2023,
     type: "App for website critique (SaaS)",
     slug: "roast-my-site",
-    url: "https://roastmysite.io/",
+    url: "https://roastmysite.io",
     imageUrl: "/projects/roastmysite.png",
-    imageAlt:
-      'Image of the website saying "Your website’s roasts are now public"',
+    imageAlt: "Roast My Site: Your website’s roasts are now public",
     technologies: [
       "React",
       "TypeScript",
@@ -296,7 +308,7 @@ export const projects: ProjectType[] = [
 
   {
     title: "Light Switch",
-    year: 2020,
+    releaseYear: 2020,
     type: "Visual Studio Code Extension (Dev tool)",
     slug: "project-light-switch",
     url: "https://marketplace.visualstudio.com/items?itemName=timrodz.lightswitch",
@@ -317,10 +329,10 @@ export const projects: ProjectType[] = [
   },
   {
     title: "Clusterduck",
-    year: 2020,
+    releaseYear: 2020,
     type: "Videogame (iOS & Android)",
     slug: "game-clusterduck",
-    url: "https://pikpok.com/games/clusterduck/",
+    url: "https://pikpok.com/games/clusterduck",
     imageUrl: "/projects/clusterduck.png",
     imageAlt: "Many ducks with a hole in the middle",
     technologies: ["Unity", "C#"],
@@ -339,7 +351,7 @@ export const projects: ProjectType[] = [
   },
   {
     title: "I Am Monster",
-    year: 2018,
+    releaseYear: 2018,
     type: "Videogame (iOS & Android)",
     slug: "game-i-am-monster",
     url: "https://www.youtube.com/watch?v=ekNfJQBq4Q8",
@@ -360,7 +372,7 @@ export const projects: ProjectType[] = [
   },
   {
     title: "El Mandamás",
-    year: 2018,
+    releaseYear: 2018,
     type: "Videogame (PC)",
     slug: "game-el-mandamas",
     url: "https://timrodz.itch.io/el-mandamas",

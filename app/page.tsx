@@ -13,7 +13,7 @@ export default function Home() {
       <header>
         <Hero />
       </header>
-      <main>
+      <main id="landing">
         <div id="page-contents">
           <About />
           <Projects />
