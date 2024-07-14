@@ -1,3 +1,5 @@
+"use client";
+
 import { useScreenSize } from "@hooks/useScreenSize";
 import { Canvas, useFrame } from "@react-three/fiber";
 import {
@@ -10,7 +12,6 @@ import {
 import { degreesToRadians, mix, progress } from "popmotion";
 import { Fragment, useEffect, useMemo, useRef } from "react";
 import * as THREE from "three";
-import { Socials } from "./Socials";
 
 export const Hero = () => {
   const heroDrag = useMotionValue(0);
@@ -34,7 +35,7 @@ export const Hero = () => {
     <div className="hero-wrapper-parallax">
       <motion.div className="hero-bg-wrapper" style={{ backgroundColor }}>
         <motion.div
-          className="hero-container"
+          className="hero-container text-center"
           style={{
             color: heroTextColor,
           }}
@@ -54,13 +55,12 @@ export const Hero = () => {
           >
             {'creative_dev(["web", "3D"])'}
           </motion.p>
-          <Socials />
         </motion.div>
-        <div className="hero-cta-container absolute bottom-0 right-1/2 translate-y-1/2 translate-x-[50%] mb-48 lg:mb-12">
+        {/* <div className="hero-cta-container absolute bottom-0 right-1/2 translate-y-1/2 translate-x-[50%] mb-48 lg:mb-12">
           <p className="cta">
             scroll to continue <span className="font-mono">↓</span>
           </p>
-        </div>
+        </div> */}
       </motion.div>
       <Canvas
         gl={{ antialias: false, toneMapping: THREE.NoToneMapping }}
@@ -102,14 +102,15 @@ const StarMesh = ({ p, color }: { p: number; color: THREE.Color | string }) => {
 
 const CanvasScene = ({ numStars = 100 }) => {
   const { width } = useScreenSize();
-  const yAngleMult = useMemo(() => (width > 1024 ? 1.5 : 10), [width]);
+  console.log("width", width);
+  const yAngleMult = useMemo(() => (width > 1024 ? 2.5 : 10), [width]);
   const icosahedronRadius = useMemo(() => (width > 1024 ? 5 : 3), [width]);
 
   const { scrollYProgress } = useScroll();
   const yAngle = useTransform(
     scrollYProgress,
     [0, 1],
-    [degreesToRadians(45), degreesToRadians(180)]
+    [degreesToRadians(20), degreesToRadians(180)]
   );
   const distance = useTransform(scrollYProgress, [0, 1], [10, 5]);
   const time = useTime();

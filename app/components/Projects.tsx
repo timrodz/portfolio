@@ -4,24 +4,21 @@ import { TechStack } from "./TechStack";
 import { ProjectType, projects } from "@data";
 
 const Project = ({ project }: { project: ProjectType }) => {
+  const projectUrl = `/projects/${project.slug}`;
   return (
     <div id={`project-${project.slug}`}>
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
         <h3>
-          <Link
-            href={`/projects/${project.slug}`}
-            target="_blank"
-            className="project-title "
-          >
+          <Link href={projectUrl} target="_blank" className="project-title ">
             {project.title}
           </Link>
         </h3>
-        <h4 className="text-zinc-500">{project.type}</h4>
+        <h4 className="text-zinc-500 font-light m-0">{project.type}</h4>
       </div>
       <div className="project-container">
         <Link
           className="project-image-container"
-          href={project.url}
+          href={projectUrl}
           target="_blank"
         >
           {/* {project.featured && <span className="absolute -ml-4 -mt-4">✨</span>} */}
@@ -36,7 +33,7 @@ const Project = ({ project }: { project: ProjectType }) => {
         <div className="project-details">
           <div className="project-summary">{project.summary}</div>
           <Link
-            href={`/projects/${project.slug}`}
+            href={projectUrl}
             target="_blank"
             className="text-lg font-medium block my-5"
           >

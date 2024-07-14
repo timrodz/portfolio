@@ -1,5 +1,6 @@
+import { Socials } from "@components/Socials";
 import { TechStack } from "@components/TechStack";
-import { projects } from "@data";
+import { projects, ProjectType } from "@data";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,23 +9,23 @@ type Props = {
   params: { slug: string };
 };
 
-function getData(slug: string) {
+function getProjectData(slug: string): ProjectType | undefined {
   return projects.find((p) => p.slug === slug);
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const project = getData(params.slug);
-
-  if (!project) {
-    return {};
-  }
+  const project = getProjectData(params.slug);
 
   return {
     metadataBase: new URL("https://timrodz.dev"),
-    title: `${project.title} - Project overview - Juan Alejandro Morais`,
-    description: `Learn more about Juan's work with project ${
-      project.title
-    }, which featured technologies ${project.technologies.join(", ")}`,
+    title: project
+      ? `${project.title} - Project overview - Juan Alejandro Morais`
+      : "Juan Alejandro Morais",
+    description: project
+      ? `Learn more about Juan's work with project ${
+          project.title
+        }, which featured technologies ${project.technologies.join(", ")}`
+      : undefined,
     authors: [
       {
         name: "Juan Alejandro Rodriguez Morais",
@@ -35,23 +36,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default function Page({ params }: Props) {
-  const project = getData(params.slug);
+  const project = getProjectData(params.slug);
 
   if (!project) {
     return (
-      <div className="h-[55vh] flex flex-col items-center justify-center">
-        <h2 className="text-center">Project not found</h2>
-        <Link href="/" className="cta-subtle inline-block mt-20">
-          <span className="font-mono">←</span> Back to main site
+      <div className="pt-32 flex flex-col items-center justify-center gap-20 text-center">
+        <h2>Project not found</h2>
+        <Link href="/" className="cta-subtle inline-block">
+          Go back to main site
         </Link>
+        <div className="flex flex-col items-center justify-center gap-2">
+          <h3>Or get in touch 👋</h3>
+          <Socials />
+        </div>
       </div>
     );
   }
 
   return (
     <div className="max-w-screen-md mx-4 md:mx-auto pt-20 pb-10">
-      <h1>{project.title} - Project overview</h1>
-      <h2>Key details</h2>
+      <h1>{project.title}</h1>
+      <h2>Project Overview</h2>
       <ul className="list-disc ml-6">
         <li>Project type: {project.type}</li>
         {project.releaseYear && (
@@ -80,12 +85,13 @@ export default function Page({ params }: Props) {
         target="_blank"
         className="cta-subtle inline-block mt-4"
       >
-        <span className="font-mono">→</span> Click here to see the project live
-        ✨
+        <span className="font-mono">→</span> Click here to see the project in
+        action ✨
       </Link>
       <h3>Summary</h3>
       <hr />
-      <div className="flex flex-col gap-4">{project.summary}</div>
+      <div className="flex flex-col gap-4 mb-4">{project.summary}</div>
+      <TechStack label="Tech stack: " technologies={project.technologies} />
       <div className="mt-4 lg:mt-6 flex flex-col gap-6 justify-center items-start lg:items-center">
         <Image
           priority
@@ -93,12 +99,11 @@ export default function Page({ params }: Props) {
           width={800 / 1.5}
           height={600 / 1.5}
           alt={project.imageAlt}
-          className="rounded-lg shadow-md"
+          className="w-full md:w-3/4 rounded-lg shadow-md"
         />
-        <TechStack technologies={project.technologies} />
       </div>
-      <h4 className="mt-20">Before you go 👋 Check out these projects!</h4>
-      <div className="mt-4 flex flex-col md:flex-row gap-4">
+      <h3 className="mt-20">See my other projects 👇</h3>
+      <div className="mt-4 flex flex-col md:flex-row gap-10 md:gap-4">
         {shuffle(projects.filter((p) => p.slug !== params.slug))
           .slice(0, 3)
           .map((p) => (
@@ -112,11 +117,11 @@ export default function Page({ params }: Props) {
                   height={300}
                   src={p.imageUrl}
                   alt={p.imageAlt}
-                  className="rounded-t-md"
+                  className="rounded-t-md w-full"
                 />
               </Link>
               <div className="p-4">
-                <h5 className="mb-1">{p.title}</h5>
+                <h4 className="my-1">{p.title}</h4>
                 <Link href={`/projects/${p.slug}`}>
                   Click here to learn more
                 </Link>

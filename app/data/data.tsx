@@ -72,7 +72,7 @@ export const seo = {
     country: "New Zealand",
   },
   contact: {
-    email: "timrodz@icloud.com",
+    email: "juan@timrodz.dev",
   },
   foundingDate: "2019",
 };
@@ -386,6 +386,34 @@ export const projects: ProjectType[] = [
           Ludum Dare 38
         </Link>
         ), where I had to design and develop a game in the span of a weekend.
+      </p>
+    ),
+  },
+];
+
+export const testimonials = [
+  {
+    name: "Charleston Silverman",
+    title: "Project Manager, Technical Lead & Producer",
+    imageUrl: "/testimonials/charleston-silverman.jpg",
+    summary: (
+      <p>
+        Juan and I started working together in 2020. Since then, we’ve been
+        building metaverse-like projects for multiple clients, featuring 3D
+        experiences inside browsers. His expertise has been key to developing
+        our client’s products and demos.
+      </p>
+    ),
+  },
+  {
+    name: "Humberto Echeverría",
+    title: "Architect, Humberto Echeverría & Associados Arquitectos",
+    imageUrl: "/testimonials/humberto-echeverria.webp",
+    summary: (
+      <p>
+        Juan built the website for my architecture firm back in 2015. He acted
+        professionally throughout the entire process, and was easy to work with.
+        He brings a joyful and refreshing approach to problem solving
       </p>
     ),
   },

@@ -43,7 +43,7 @@ h1 {
 }
 
 h2 {
-  @apply text-4xl md:text-6xl text-teal-600 font-semibold mt-4 mb-3;
+  @apply text-4xl md:text-5xl text-teal-600 font-semibold mt-4 mb-3;
 }
 
 h3 {
@@ -51,7 +51,7 @@ h3 {
 }
 
 h4 {
-  @apply text-xl font-light;
+  @apply text-2xl md:text-3xl text-teal-700 font-normal mt-4 mb-3;
 }
 
 p {
@@ -63,7 +63,7 @@ hr {
 }
 
 section {
-  @apply mt-20;
+  @apply mt-20 md:mt-16;
 }
 
 a {
@@ -71,7 +71,7 @@ a {
 }
 
 ul {
-  @apply text-gray-700;
+  @apply text-zinc-700;
 }
 
 header {
@@ -158,11 +158,15 @@ footer {
 }
 
 #about p {
-  @apply lg:text-lg mt-3 lg:mt-4;
+  @apply mt-3 lg:mt-4;
 }
 
 #projects p {
-  @apply lg:text-lg mb-4 lg:mb-3;
+  @apply mb-4 lg:mb-3;
+}
+
+section p {
+  @apply lg:text-lg;
 }
 
 .project-showcase {

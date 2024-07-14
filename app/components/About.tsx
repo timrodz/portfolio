@@ -1,13 +1,14 @@
 import Link from "next/link";
-import { useMemo } from "react";
 import { TechStack } from "./TechStack";
 import Image from "next/image";
 
 import { Reenie_Beanie } from "next/font/google";
+import { Socials } from "./Socials";
+
 const handwrittenFont = Reenie_Beanie({ weight: "400", subsets: ["latin"] });
 
 export const About = () => {
-  const date = useMemo(() => new Date().toLocaleDateString("en-nz"), []);
+  const today = new Date().toLocaleDateString("en-nz");
 
   return (
     <section id="about">
@@ -20,8 +21,8 @@ export const About = () => {
           Futureverse
         </Link>
         . If you want to get in touch with me, please send me a message at{" "}
-        <Link href="mailto:timrodz@icloud.com" target="_blank">
-          timrodz@icloud.com
+        <Link href="mailto:juan@timrodz.dev" target="_blank">
+          juan@timrodz.dev
         </Link>
         .
       </p>
@@ -30,10 +31,11 @@ export const About = () => {
           "https://docs.google.com/document/d/1SVf7G72m6miHjatK2mqOHYSvPPMcA991agUyubH33iU/edit?usp=sharing"
         }
         target="_blank"
-        className="cta-subtle text-center block lg:inline-block mt-6 mb-4"
+        className="cta-subtle text-center block lg:inline-block mt-6"
       >
         <span className="font-mono">→</span> Click here to download my resume!
       </Link>
+
       <h3>About me</h3>
       <p>
         Born in Chitré, Panamá 🇵🇦 in 1995, I’m somewhat of a cross between
@@ -55,7 +57,8 @@ export const About = () => {
         purpose; if it helps you solve a problem, that’s what matters.
       </p>
       <p>
-        With that said, these are my favorite tools & technologies (as of {date}
+        With that said, these are my favorite tools & technologies (as of{" "}
+        {today}
         ):
       </p>
       <TechStack
@@ -68,6 +71,8 @@ export const About = () => {
           "AWS",
         ]}
       />
+      <h4>Get in touch with me 👋</h4>
+      <Socials />
       <p className="!mt-6">
         P.S. I’m definitely not a robot 🤖 To prove it, here are some pictures
         of me over the past few years!
@@ -91,15 +96,6 @@ export const About = () => {
           description="California 2019"
           className="rotate-[2deg]"
         />
-      </div>
-      <div className="mt-12 flex justify-center">
-        <Link
-          href="mailto:timrodz@icloud.com"
-          target="_blank"
-          className="cta-subtle"
-        >
-          Get in touch 👋
-        </Link>
       </div>
     </section>
   );

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   focusing on SaaS products for small to medium-sized businesses (including startups). He is located in 
   Auckland, New Zealand, working at Futureverse as a Senior Software Engineer. Juan's preferred tech 
   stack is TypeScript, React, Node, AWS, and Elixir + Phoenix. He also has experience with leading 
-  developer teams. Contact Juan at timrodz@icloud.com
+  developer teams. Contact Juan at juan@timrodz.dev
     `,
   authors: [
     { name: "Juan Alejandro Rodriguez Morais", url: "https://www.timrodz.dev" },

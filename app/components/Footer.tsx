@@ -1,5 +1,3 @@
-"use client";
-
 import { TechnologyNameUrl } from "@data";
 import { Socials } from "./Socials";
 import Link from "next/link";
