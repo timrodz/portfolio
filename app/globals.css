@@ -239,3 +239,28 @@ section p {
 .footer-container {
   @apply max-w-screen-lg mx-auto flex flex-col lg:flex-row lg:items-center justify-between px-4 gap-10 lg:gap-0;
 }
+
+.testimonial-container {
+  @apply flex flex-col gap-10 ml-0 lg:ml-1;
+}
+
+.testimonial-person {
+  @apply grid gap-3 items-center ml-1;
+  grid-template-columns: 80px 1fr;
+}
+
+.testimonial-person h3 {
+  @apply text-zinc-600 font-normal text-xl m-0;
+}
+
+.testimonial-person h4 {
+  @apply text-lg text-teal-700 font-normal italic;
+}
+
+.testimonial {
+  @apply mt-2;
+}
+
+.testimonial p {
+  @apply border-l-2 border-zinc-300 px-2 text-zinc-500;
+}
