@@ -162,11 +162,11 @@ footer {
 }
 
 #socials a {
-  @apply text-base text-stone-600 font-mono hover:underline flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100;
+  @apply text-base text-stone-600 font-mono hover:underline flex items-center transition-all hover:text-neutral-800;
 }
 
 #socials a p {
-  @apply m-0 ml-2 h-7 text-base text-stone-600 transition-all hover:text-neutral-800 dark:hover:text-neutral-100;
+  @apply m-0 ml-2 h-7 text-base text-stone-600 transition-all hover:text-neutral-800;
 }
 
 section p {
