@@ -67,7 +67,7 @@ section {
 }
 
 a {
-  @apply text-teal-700 hover:underline hover:decoration-teal-800;
+  @apply text-teal-700 hover:underline decoration-orange-400 underline-offset-2 decoration-[0.1em];
 }
 
 ul {
@@ -85,12 +85,8 @@ footer {
   position: relative;
   background-color: var(--background);
   z-index: 10;
-  background-image: url("/footer.svg");
-  background-size: cover;
-  background-position: top;
-  background-repeat: no-repeat;
 
-  @apply pt-[18rem] lg:pt-[24rem] pb-16;
+  @apply mt-16 pb-20;
 }
 
 @layer utilities {
@@ -142,11 +138,11 @@ footer {
 }
 
 .cta {
-  @apply text-teal-800 bg-teal-100 px-4 py-2 font-medium rounded-md;
+  @apply text-teal-800 bg-teal-100 px-4 py-2 font-medium rounded-md decoration-teal-800;
 }
 
 .cta-subtle {
-  @apply text-teal-700 bg-teal-50 ring-teal-600 ring-[1px] px-4 py-2 font-medium rounded-md;
+  @apply text-teal-700 bg-teal-50 ring-teal-600 ring-[1px] px-4 py-2 font-medium rounded-md decoration-teal-800 decoration-1;
 }
 
 .hero-cta-container .cta {
@@ -163,6 +159,14 @@ footer {
 
 #projects p {
   @apply mb-4 lg:mb-3;
+}
+
+#socials a {
+  @apply text-base text-stone-600 font-mono hover:underline flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100;
+}
+
+#socials a p {
+  @apply m-0 ml-2 h-7 text-base text-stone-600 transition-all hover:text-neutral-800 dark:hover:text-neutral-100;
 }
 
 section p {
@@ -182,7 +186,7 @@ section p {
 }
 
 .project-title {
-  @apply hover:underline hover:decoration-teal-700;
+  @apply hover:underline decoration-teal-700 underline-offset-4;
 }
 
 .project-container {
@@ -234,8 +238,4 @@ section p {
     rgba(0, 0, 0, 0.2) 100%
   );
   @apply absolute top-0 left-0 w-full h-full block rounded-sm;
-}
-
-.footer-container {
-  @apply max-w-screen-lg mx-auto flex flex-col lg:flex-row lg:items-center justify-between px-4 gap-10 lg:gap-0;
 }

@@ -1,3 +1,4 @@
+import { Footer } from "@components/Footer";
 import { Socials } from "@components/Socials";
 import { TechStack } from "@components/TechStack";
 import { projects, ProjectType } from "@data";
@@ -19,8 +20,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     metadataBase: new URL("https://timrodz.dev"),
     title: project
-      ? `${project.title} - Project overview - Juan Alejandro Morais`
-      : "Juan Alejandro Morais",
+      ? `${project.title} - Project overview - Juan Rodríguez Morais`
+      : "Juan Rodríguez Morais",
     description: project
       ? `Learn more about Juan's work with project ${
           project.title
@@ -54,7 +55,7 @@ export default function Page({ params }: Props) {
   }
 
   return (
-    <div className="max-w-screen-md mx-4 md:mx-auto pt-20 pb-10">
+    <div className="max-w-screen-md mx-4 md:mx-auto pt-20">
       <h1>{project.title}</h1>
       <h2>Project Overview</h2>
       <ul className="list-disc ml-6">
@@ -77,16 +78,13 @@ export default function Page({ params }: Props) {
             Role: <span className="font-medium">{project.role}</span>
           </li>
         )}
-        {/* <li>Technologies: {project.technologies.join(", ")}</li> */}
-        {/* <li>Link: </li> */}
       </ul>
       <Link
         href={project.url}
         target="_blank"
         className="cta-subtle inline-block mt-4"
       >
-        <span className="font-mono">→</span> Click here to see the project in
-        action ✨
+        Click here to see the project in action ✨
       </Link>
       <h3>Summary</h3>
       <hr />
@@ -129,11 +127,12 @@ export default function Page({ params }: Props) {
             </div>
           ))}
       </div>
-      <div className="flex items-center justify-start lg:justify-center">
+      <div className="flex items-center justify-start lg:justify-center mb-4">
         <Link href="/" className="cta-subtle inline-block mt-20">
-          <span className="font-mono">←</span> Back to main site
+          Back to main site
         </Link>
       </div>
+      <Footer />
     </div>
   );
 }

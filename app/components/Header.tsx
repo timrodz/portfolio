@@ -10,7 +10,7 @@ export const Header = () => {
       <div className="mx-4 md:mx-10 h-full flex items-center justify-start lg:justify-center">
         {/* <p>🦥</p> */}
         <Link href="/" className="text-xl font-medium text-center">
-          Juan Alejandro Morais
+          Juan Rodríguez Morais
         </Link>
         {/* <p>✨</p> */}
       </div>

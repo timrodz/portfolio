@@ -20,6 +20,10 @@ export const About = () => {
         <Link href="https://www.futureverse.com/" target="_blank">
           Futureverse
         </Link>
+        . You can see my blog at{" "}
+        <Link href="https://blog.timrodz.dev" target="_blank">
+          blog.timrodz.dev
+        </Link>
         . If you want to get in touch with me, please send me a message at{" "}
         <Link href="mailto:juan@timrodz.dev" target="_blank">
           juan@timrodz.dev
@@ -33,9 +37,9 @@ export const About = () => {
         target="_blank"
         className="cta-subtle text-center block lg:inline-block mt-6"
       >
-        <span className="font-mono">→</span> Click here to download my resume!
+        Click here to download my resume!
       </Link>
-
+      <Socials />
       <h3>About me</h3>
       <p>
         Born in Chitré, Panamá 🇵🇦 in 1995, I’m somewhat of a cross between
@@ -71,8 +75,7 @@ export const About = () => {
           "AWS",
         ]}
       />
-      <h4>Get in touch with me 👋</h4>
-      <Socials />
+
       <p className="!mt-6">
         P.S. I’m definitely not a robot 🤖 To prove it, here are some pictures
         of me over the past few years!

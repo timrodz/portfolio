@@ -37,7 +37,7 @@ const Project = ({ project }: { project: ProjectType }) => {
             target="_blank"
             className="text-lg font-medium block my-5"
           >
-            <span className="font-mono">→</span> Click here to learn more
+            Click here to learn more
           </Link>
           <TechStack technologies={project.technologies} />
         </div>

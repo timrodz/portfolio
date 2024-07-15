@@ -15,9 +15,9 @@ export default function Home() {
         <div id="page-contents">
           <About />
           <Projects />
+          <Footer />
         </div>
       </main>
-      <Footer />
     </Fragment>
   );
 }

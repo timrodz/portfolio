@@ -35,35 +35,31 @@ export const TechnologyNameUrl: Record<TechnologyName, string> = {
 
 export const socials = [
   {
-    name: "LinkedIn",
-    url: "https://www.linkedin.com/in/timrodz",
-    icon: "/icons/socials/linkedin.svg",
+    name: "Blog",
+    url: "https://blog.timrodz.dev",
   },
   {
     name: "GitHub",
     url: "https://github.com/timrodz",
-    icon: "/icons/socials/github.svg",
   },
   {
-    name: "DEV",
-    url: "https://dev.to/timrodz",
-    icon: "/icons/socials/dev.svg",
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/timrodz",
   },
   {
     name: "StackOverflow",
     url: "https://stackoverflow.com/users/4329379/juan-morais",
-    icon: "/icons/socials/stackoverflow.svg",
   },
 ];
 
 export const seo = {
-  defaultTitle: "Juan Alejandro Morais",
+  defaultTitle: "Juan Rodríguez Morais",
   logo: "../static/favicon/favicon.png",
-  author: "Juan Alejandro Morais",
+  author: "Juan Rodríguez Morais",
   url: "https://www.timrodz.dev",
   legalName: "Juan Alejandro Rodriguez Morais",
   defaultDescription:
-    "Portfolio of Juan Alejandro Morais, Full-Stack Software Engineer.",
+    "Portfolio of Juan Rodríguez Morais, Full-Stack Software Engineer.",
 
   themeColor: "#0e9f96",
   backgroundColor: "#fff",

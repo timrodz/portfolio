@@ -47,7 +47,7 @@ export const Hero = () => {
             whileHover={{ scale: 1.05 }}
             style={{ x: heroDrag }}
           >
-            Juan Alejandro Morais
+            Juan Rodríguez Morais
           </motion.h1>
           <motion.p
             className="hero-headline"
