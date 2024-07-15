@@ -86,7 +86,7 @@ footer {
   background-color: var(--background);
   z-index: 10;
 
-  @apply mt-16 pb-20;
+  @apply mt-16 mb-20;
 }
 
 @layer utilities {
