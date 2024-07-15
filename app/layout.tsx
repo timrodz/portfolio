@@ -12,11 +12,13 @@ import {
 const sans = SansFont({
   subsets: ["latin"],
   variable: "--font-sans",
+  display: "swap",
   weight: ["400", "500", "600", "700"],
 });
 const mono = MonoFont({
   subsets: ["latin"],
   variable: "--font-mono",
+  display: "swap",
   weight: ["400", "500"],
 });
 
