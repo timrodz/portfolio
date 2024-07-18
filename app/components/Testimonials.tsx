@@ -1,6 +1,5 @@
 import { testimonials } from "@data";
 import Image from "next/image";
-import { Fragment } from "react";
 
 export const Testimonials = () => {
   return (
@@ -8,9 +7,9 @@ export const Testimonials = () => {
       <h2>Testimonials</h2>
       <hr />
       <p>
-        Throughout my career, I’ve had the privilege of working with many
+        {`Throughout my career, I've had the privilege of working with many
         talented people. Working with them has yielded wonderful experiences and
-        partnerships.
+        partnerships.`}
       </p>
       <div className="testimonial-container mt-10">
         {testimonials.map((t) => (
@@ -21,9 +20,9 @@ export const Testimonials = () => {
                 alt={t.name}
                 width={100}
                 height={100}
-                className="rounded-full aspect-square object-cover"
+                className="rounded-full aspect-square object-cover grayscale"
               />
-              <div>
+              <div className="flex flex-col gap-1">
                 <h3>{t.name}</h3>
                 <h4>{t.title}</h4>
               </div>

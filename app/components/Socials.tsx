@@ -20,18 +20,15 @@ function ArrowIcon() {
 
 export const Socials = ({ className = "" }: { className?: string }) => {
   return (
-    <div id="socials" className={`socials flex gap-4 my-6 ${className}`}>
+    <ul id="socials" className={`socials flex gap-4 my-6 ${className}`}>
       {socials.map(({ name, url }) => (
-        <Link
-          key={`socials-${name}`}
-          rel="noopener noreferrer"
-          target="_blank"
-          href={url}
-        >
-          <ArrowIcon />
-          <p className="">{name}</p>
-        </Link>
+        <li key={`socials-${name}`}>
+          <Link rel="noopener noreferrer" target="_blank" href={url}>
+            <ArrowIcon />
+            <span className="ml-2">{name}</span>
+          </Link>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 };

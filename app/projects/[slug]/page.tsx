@@ -43,7 +43,7 @@ export default function Page({ params }: Props) {
     return (
       <div className="pt-32 flex flex-col items-center justify-center gap-20 text-center">
         <h2>Project not found</h2>
-        <Link href="/" className="cta-subtle inline-block">
+        <Link href="/" className="cta inline-block">
           Go back to main site
         </Link>
         <div className="flex flex-col items-center justify-center gap-2">
@@ -82,7 +82,7 @@ export default function Page({ params }: Props) {
       <Link
         href={project.url}
         target="_blank"
-        className="cta-subtle inline-block mt-4"
+        className="cta inline-block mt-4"
       >
         Click here to see the project in action ✨
       </Link>
@@ -128,7 +128,7 @@ export default function Page({ params }: Props) {
           ))}
       </div>
       <div className="flex items-center justify-start lg:justify-center mb-4">
-        <Link href="/" className="cta-subtle inline-block mt-20">
+        <Link href="/" className="cta inline-block mt-20">
           Back to main site
         </Link>
       </div>

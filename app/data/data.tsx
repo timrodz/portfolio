@@ -54,7 +54,7 @@ export const socials = [
 
 export const seo = {
   defaultTitle: "Juan Rodríguez Morais",
-  logo: "../static/favicon/favicon.png",
+  logo: "../static/favicon/favicon.webp",
   author: "Juan Rodríguez Morais",
   url: "https://www.timrodz.dev",
   legalName: "Juan Alejandro Rodriguez Morais",
@@ -125,9 +125,9 @@ export const projects: ProjectType[] = [
     title: "Party Bear: Swappables",
     releaseYear: 2023,
     type: "Web3 Project (Web App)",
-    slug: "party-bear-swappables",
+    slug: "party-bears",
     url: "https://opensea.io/collection/partybear",
-    imageUrl: "/projects/pb-swappables.jpg",
+    imageUrl: "/projects/pb-swappables.webp",
     imageAlt: 'A Party Bear (NFT) with text saying "Clear The Runway"',
     technologies: [
       "React",
@@ -164,7 +164,7 @@ export const projects: ProjectType[] = [
     type: "Stock Investment Platform (SaaS/Fintech)",
     slug: "sharesies",
     url: "https://www.sharesies.nz",
-    imageUrl: "/projects/sharesies.jpg",
+    imageUrl: "/projects/sharesies.webp",
     imageAlt:
       "Sharesies app showing 3 screens: investments, overall portfolio, and stock search",
     technologies: [
@@ -208,7 +208,7 @@ export const projects: ProjectType[] = [
     type: "Web3 Project (Web App + Videogame)",
     slug: "the-next-legends",
     url: "https://www.thenextlegends.xyz",
-    imageUrl: "/projects/tnl.jpg",
+    imageUrl: "/projects/tnl.webp",
     technologies: [
       "React",
       "TypeScript",
@@ -244,7 +244,7 @@ export const projects: ProjectType[] = [
     type: "Tournament management app for games (SaaS)",
     slug: "tie-breaker",
     url: "https://mtg-friends.fly.dev",
-    imageUrl: "/projects/tie-breaker.jpg",
+    imageUrl: "/projects/tie-breaker.webp",
     imageAlt: "Trading Card Games made easy",
     technologies: ["Elixir", "Phoenix", "PostgreSQL", "Tailwind CSS"],
     summary: (
@@ -258,16 +258,16 @@ export const projects: ProjectType[] = [
           which involves 4 players paired against each other.
         </p>
         <p>
-          My solution? To build a tournament organizing tool which let hosts add
+          {`My solution? To build a tournament organizing tool which let hosts add
           participants, create round pairings (with complex algorithms), and
           easily determine round + tournament winners. This was also an
           opportunity for me to learn Elixir, a programming language I worked
-          with at a previous role. Funnily enough, I didn’t like Elixir at
-          first, but now it’s my favorite programming language!
+          with at a previous role. Funnily enough, I didn't like Elixir at
+          first, but now it's my favorite programming language!`}
         </p>
         <p>
-          Tie Breaker is now being used by multiple stores across Panama; I’m
-          very grateful for their support.
+          {`Tie Breaker is now being used by multiple stores across Panama; I'm
+          very grateful for their support.`}
         </p>
       </>
     ),
@@ -278,7 +278,7 @@ export const projects: ProjectType[] = [
     type: "App for website critique (SaaS)",
     slug: "roast-my-site",
     url: "https://roastmysite.io",
-    imageUrl: "/projects/roastmysite.png",
+    imageUrl: "/projects/roastmysite.webp",
     imageAlt: "Roast My Site: Your website’s roasts are now public",
     technologies: [
       "React",
@@ -306,9 +306,9 @@ export const projects: ProjectType[] = [
     title: "Light Switch",
     releaseYear: 2020,
     type: "Visual Studio Code Extension (Dev tool)",
-    slug: "project-light-switch",
+    slug: "light-switch",
     url: "https://marketplace.visualstudio.com/items?itemName=timrodz.lightswitch",
-    imageUrl: "/projects/light-switch.png",
+    imageUrl: "/projects/light-switch.webp",
     imageAlt: "A light bulb emoji on a blue background",
     technologies: ["TypeScript", "Azure"],
     summary: (
@@ -327,9 +327,9 @@ export const projects: ProjectType[] = [
     title: "Clusterduck",
     releaseYear: 2020,
     type: "Videogame (iOS & Android)",
-    slug: "game-clusterduck",
+    slug: "clusterduck",
     url: "https://pikpok.com/games/clusterduck",
-    imageUrl: "/projects/clusterduck.png",
+    imageUrl: "/projects/clusterduck.webp",
     imageAlt: "Many ducks with a hole in the middle",
     technologies: ["Unity", "C#"],
     company: "PikPok",
@@ -349,9 +349,9 @@ export const projects: ProjectType[] = [
     title: "I Am Monster",
     releaseYear: 2018,
     type: "Videogame (iOS & Android)",
-    slug: "game-i-am-monster",
+    slug: "i-am-monster",
     url: "https://www.youtube.com/watch?v=ekNfJQBq4Q8",
-    imageUrl: "/projects/i-am-monster.png",
+    imageUrl: "/projects/i-am-monster.webp",
     imageAlt: 'Three big creatures in a city, with the word "I Am Monster"',
     technologies: ["Unity", "C#", "Python"],
     company: "PikPok",
@@ -370,9 +370,9 @@ export const projects: ProjectType[] = [
     title: "El Mandamás",
     releaseYear: 2018,
     type: "Videogame (PC)",
-    slug: "game-el-mandamas",
+    slug: "el-mandamas",
     url: "https://timrodz.itch.io/el-mandamas",
-    imageUrl: "/projects/el-mandamas.png",
+    imageUrl: "/projects/el-mandamas.webp",
     imageAlt: 'Map of Panama with text saying "El Mandamás" (The ruler)',
     technologies: ["Unity", "C#"],
     summary: (
@@ -391,26 +391,46 @@ export const testimonials = [
   {
     name: "Charleston Silverman",
     title: "Project Manager, Technical Lead & Producer",
-    imageUrl: "/testimonials/charleston-silverman.jpg",
+    imageUrl: "/testimonials/charleston-silverman.webp",
     summary: (
-      <p>
-        Juan and I started working together in 2020. Since then, we’ve been
-        building metaverse-like projects for multiple clients, featuring 3D
-        experiences inside browsers. His expertise has been key to developing
-        our client’s products and demos.
-      </p>
+      <>
+        <p>
+          I have worked with and hired many developers during my working life
+          and I can honestly say thatJuan is by far one of the best developers I
+          have worked with. Very easy and clear communication, quick turn-around
+          and extremely knowledgeable about every aspect of the projects we have
+          worked on together. I would highly recommend Juan to anyone looking
+          for an experienced and extremely capable team member.
+        </p>
+      </>
     ),
   },
   {
-    name: "Humberto Echeverría",
-    title: "Architect, Humberto Echeverría & Associados Arquitectos",
-    imageUrl: "/testimonials/humberto-echeverria.webp",
+    name: "Jorge Ortíz",
+    title: "Data Engineer & MTG enthusiast",
+    imageUrl: "/testimonials/jorge-ortiz.webp",
     summary: (
-      <p>
-        Juan built the website for my architecture firm back in 2015. He acted
-        professionally throughout the entire process, and was easy to work with.
-        He brings a joyful and refreshing approach to problem solving
-      </p>
+      <>
+        <p>
+          {`When it comes to organizing tournaments for Magic: The Gathering, I've been testing different methods of pairing for a long time, with little to no success. Juan's
+          app is exactly what I've been looking for. It offers an intuitive
+          and streamlined process for organizing matches and tournaments, with
+          an easy and user-friendly interface. Also, it's updated regularly with
+          bug fixes and improvements. I highly recommend Juan's services!`}
+        </p>
+      </>
     ),
   },
+  // {
+  //   name: "Humberto Echeverría",
+  //   title: "Architect, Humberto Echeverría & Associados Arquitectos",
+  //   imageUrl: "/testimonials/humberto-echeverria.webp",
+  //   summary: (
+  //     <p>
+  //       Juan built the website for my architecture firm back in 2015. He acted
+  //       professionally throughout the entire process, and was easy to work with.
+  //       He brings a joyful and refreshing approach to problem solving
+  //     </p>
+  //   ),
+  // },
 ];

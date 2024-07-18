@@ -2,20 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
   --background: #fdfcfa;
 
@@ -138,11 +124,11 @@ footer {
 }
 
 .cta {
-  @apply text-teal-800 bg-teal-100 px-4 py-2 font-medium rounded-md decoration-teal-800;
+  @apply text-teal-700 bg-teal-50 ring-teal-600 ring-[1px] px-4 py-2 font-medium rounded-md decoration-teal-800 decoration-1;
 }
 
 .cta-subtle {
-  @apply text-teal-700 bg-teal-50 ring-teal-600 ring-[1px] px-4 py-2 font-medium rounded-md decoration-teal-800 decoration-1;
+  @apply text-teal-700;
 }
 
 .hero-cta-container .cta {
@@ -254,15 +240,15 @@ section p {
 }
 
 .testimonial-person h3 {
-  @apply text-zinc-600 font-normal text-xl m-0;
+  @apply text-zinc-600 font-medium text-xl m-0;
 }
 
 .testimonial-person h4 {
-  @apply text-lg text-teal-700 font-normal italic;
+  @apply text-lg text-teal-700 font-normal italic m-0;
 }
 
 .testimonial {
-  @apply mt-2;
+  @apply mt-4;
 }
 
 .testimonial p {
