@@ -4,7 +4,8 @@ import { TechStack } from "./TechStack";
 import { ProjectType, projects } from "@data";
 
 const Project = ({ project }: { project: ProjectType }) => {
-  const projectUrl = `/projects/${project.slug}`;
+  // TODO: Add a `?from=portfolio` so I can show a link to send users back to my portfolio
+  const projectUrl = `https://blog.timrodz.dev/projects/${project.slug}`;
   return (
     <div id={`project-${project.slug}`}>
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
@@ -16,12 +17,12 @@ const Project = ({ project }: { project: ProjectType }) => {
         <h4 className="text-zinc-500 font-light m-0">{project.type}</h4>
       </div>
       <div className="project-container">
-        <Link
+        <div className="project-image-container">
+          {/* <Link
           className="project-image-container"
           href={projectUrl}
           target="_blank"
-        >
-          {/* {project.featured && <span className="absolute -ml-4 -mt-4">✨</span>} */}
+          > */}
           <Image
             className="project-image"
             src={project.imageUrl}
@@ -29,13 +30,14 @@ const Project = ({ project }: { project: ProjectType }) => {
             width={400}
             height={300}
           />
-        </Link>
+          {/* </Link> */}
+        </div>
         <div className="project-details">
           <div className="project-summary">{project.summary}</div>
           <Link
             href={projectUrl}
             target="_blank"
-            className="text-lg font-medium block my-5"
+            className="text-lg font-medium block my-5 cta-subtle"
           >
             Click here to learn more
           </Link>
@@ -52,7 +54,7 @@ export const Projects = () => (
     <hr />
     <p>
       {
-        "Below are exciting projects I have created and/or contributed to during my career. Due to the nature of some industries, certain projects are under NDA agreements, so I can’t show everything I’ve worked on."
+        "Below are exciting projects I have created and/or contributed to during my career. Due to the nature of some industries, certain projects are under NDA agreements, so I can't show everything I've worked on."
       }
     </p>
     <div className="project-showcase">
