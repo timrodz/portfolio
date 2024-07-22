@@ -4,8 +4,8 @@ import Link from "next/link";
 function ArrowIcon() {
   return (
     <svg
-      width="12"
-      height="12"
+      width="10"
+      height="10"
       viewBox="0 0 12 12"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -23,7 +23,12 @@ export const Socials = ({ className = "" }: { className?: string }) => {
     <ul id="socials" className={`socials flex gap-4 my-6 ${className}`}>
       {socials.map(({ name, url }) => (
         <li key={`socials-${name}`}>
-          <Link rel="noopener noreferrer" target="_blank" href={url}>
+          <Link
+            rel="noopener noreferrer"
+            target="_blank"
+            href={url}
+            className="text-base"
+          >
             <ArrowIcon />
             <span className="ml-2">{name}</span>
           </Link>

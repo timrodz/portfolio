@@ -3,18 +3,15 @@ import "./globals.css";
 import Script from "next/script";
 import { structuredData, googleAnalyticsID } from "@data";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { JetBrains_Mono as MonoFont } from "next/font/google";
+import localFont from "next/font/local";
 
-import {
-  Inter as SansFont,
-  JetBrains_Mono as MonoFont,
-} from "next/font/google";
-
-const sans = SansFont({
-  subsets: ["latin"],
+const sans = localFont({
+  src: "./fonts/mona-sans.woff2",
   variable: "--font-sans",
-  display: "swap",
-  weight: ["400", "500", "600", "700"],
+  weight: "400 600 700 800",
 });
+
 const mono = MonoFont({
   subsets: ["latin"],
   variable: "--font-mono",
