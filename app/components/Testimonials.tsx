@@ -14,7 +14,7 @@ export const Testimonials = () => {
       <div className="testimonial-container mt-10">
         {testimonials.map((t) => (
           <div key={t.name}>
-            <div className="testimonial-person">
+            <div className="testimonial-person pointer-events-none">
               <Image
                 src={t.imageUrl}
                 alt={t.name}

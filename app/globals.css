@@ -148,7 +148,7 @@ footer {
 }
 
 #socials a {
-  @apply text-base text-stone-600 font-mono hover:underline flex items-center transition-all hover:text-neutral-800;
+  @apply text-base text-stone-600 font-mono hover:underline inline-flex items-center transition-all hover:text-neutral-800;
 }
 
 #socials a p {
@@ -192,7 +192,7 @@ section p {
 }
 
 .technologies span {
-  @apply text-slate-500 text-sm font-mono bg-white ring-[1px] ring-slate-300 rounded-md px-2 leading-8 mr-2 my-1 inline-block text-center;
+  @apply text-slate-600 text-sm font-mono font-medium bg-white ring-[1px] ring-slate-300 rounded-md px-2 leading-8 mr-2 my-1 inline-block text-center;
 }
 
 .polaroid-gallery {
@@ -240,11 +240,11 @@ section p {
 }
 
 .testimonial-person h3 {
-  @apply text-zinc-600 font-medium text-xl m-0;
+  @apply text-zinc-600 font-semibold text-xl m-0;
 }
 
 .testimonial-person h4 {
-  @apply text-lg text-teal-700 font-normal italic m-0;
+  @apply text-lg text-teal-700 font-medium m-0;
 }
 
 .testimonial {
@@ -252,5 +252,5 @@ section p {
 }
 
 .testimonial p {
-  @apply border-l-2 border-zinc-300 px-2 text-zinc-500;
+  @apply border-l-2 border-zinc-300 px-2 text-zinc-600;
 }

@@ -18,11 +18,6 @@ const Project = ({ project }: { project: ProjectType }) => {
       </div>
       <div className="project-container">
         <div className="project-image-container">
-          {/* <Link
-          className="project-image-container"
-          href={projectUrl}
-          target="_blank"
-          > */}
           <Image
             className="project-image"
             src={project.imageUrl}
@@ -30,14 +25,13 @@ const Project = ({ project }: { project: ProjectType }) => {
             width={400}
             height={300}
           />
-          {/* </Link> */}
         </div>
         <div className="project-details">
           <div className="project-summary">{project.summary}</div>
           <Link
             href={projectUrl}
             target="_blank"
-            className="text-lg font-medium block my-5 cta-subtle"
+            className="text-lg font-medium block my-5 cta-subtle decoration-teal-700"
           >
             Click here to learn more
           </Link>
@@ -48,9 +42,9 @@ const Project = ({ project }: { project: ProjectType }) => {
   );
 };
 
-export const Projects = () => (
+export const Portfolio = () => (
   <section id="projects">
-    <h2>Portfolio</h2>
+    <h2>Professional Portfolio</h2>
     <hr />
     <p>
       {

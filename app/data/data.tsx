@@ -396,11 +396,11 @@ export const testimonials = [
       <>
         <p>
           I have worked with and hired many developers during my working life
-          and I can honestly say thatJuan is by far one of the best developers I
-          have worked with. Very easy and clear communication, quick turn-around
-          and extremely knowledgeable about every aspect of the projects we have
-          worked on together. I would highly recommend Juan to anyone looking
-          for an experienced and extremely capable team member.
+          and I can honestly say that Juan is by far one of the best developers
+          I have worked with. Very easy and clear communication, quick
+          turn-around and extremely knowledgeable about every aspect of the
+          projects we have worked on together. I would highly recommend Juan to
+          anyone looking for an experienced and extremely capable team member.
         </p>
       </>
     ),
@@ -415,22 +415,20 @@ export const testimonials = [
           {`When it comes to organizing tournaments for Magic: The Gathering, I've been testing different methods of pairing for a long time, with little to no success. Juan's
           app is exactly what I've been looking for. It offers an intuitive
           and streamlined process for organizing matches and tournaments, with
-          an easy and user-friendly interface. Also, it's updated regularly with
-          bug fixes and improvements. I highly recommend Juan's services!`}
+          an easy and user-friendly interface. I highly recommend Juan's services.`}
         </p>
       </>
     ),
   },
-  // {
-  //   name: "Humberto Echeverría",
-  //   title: "Architect, Humberto Echeverría & Associados Arquitectos",
-  //   imageUrl: "/testimonials/humberto-echeverria.webp",
-  //   summary: (
-  //     <p>
-  //       Juan built the website for my architecture firm back in 2015. He acted
-  //       professionally throughout the entire process, and was easy to work with.
-  //       He brings a joyful and refreshing approach to problem solving
-  //     </p>
-  //   ),
-  // },
+  {
+    name: "Humberto Echeverría",
+    title: "Head Architect (Humberto Echeverría & Associados Arquitectos)",
+    imageUrl: "/testimonials/humberto-echeverria.webp",
+    summary: (
+      <p>
+        {`Juan built the portfolio website for my architecture firm in 2015. He behaved
+        professionally throughout the process, making it easy to work with him. He was able to communicate clearly, being honest about problems he faced, but still made the effort to find solutions to those problems. `}
+      </p>
+    ),
+  },
 ];

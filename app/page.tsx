@@ -1,7 +1,7 @@
 import { About } from "@components/About";
 import { Footer } from "@components/Footer";
 import { Hero } from "@components/Hero";
-import { Projects } from "@components/Projects";
+import { Portfolio } from "@components/Portfolio";
 import { Testimonials } from "@components/Testimonials";
 
 import { Fragment } from "react";
@@ -16,7 +16,7 @@ export default function Home() {
         <div id="page-contents">
           <About />
           <Testimonials />
-          <Projects />
+          <Portfolio />
           <Footer />
         </div>
       </main>
