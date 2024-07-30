@@ -56,11 +56,11 @@ export const Hero = () => {
             {'creative_dev(["web", "3D"])'}
           </motion.p>
         </motion.div>
-        {/* <div className="hero-cta-container absolute bottom-0 right-1/2 translate-y-1/2 translate-x-[50%] mb-48 lg:mb-12">
+        <div className="hero-cta-container absolute bottom-0 right-1/2 translate-y-1/2 translate-x-[50%] mb-48 lg:mb-12">
           <p className="cta">
             scroll to continue <span className="font-mono">↓</span>
           </p>
-        </div> */}
+        </div>
       </motion.div>
       <Canvas
         gl={{ antialias: false, toneMapping: THREE.NoToneMapping }}
