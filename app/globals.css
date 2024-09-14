@@ -192,7 +192,7 @@ section p {
 }
 
 .technologies span {
-  @apply text-slate-600 text-sm font-mono font-medium bg-white ring-[1px] ring-slate-300 rounded-md px-2 leading-8 mr-2 my-1 inline-block text-center;
+  @apply text-slate-600 text-sm font-mono font-medium bg-white ring-[1px] ring-stone-300 rounded-md px-2 leading-8 mr-2 my-1 inline-block text-center;
 }
 
 .polaroid-gallery {
