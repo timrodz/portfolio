@@ -238,6 +238,26 @@ export const projects: ProjectType[] = [
     ),
   },
   {
+    title: "ZED RUN",
+    releaseYear: 2020,
+    type: "Web3 Project (Web App)",
+    slug: "zed-run",
+    url: "https://zed.run/",
+    imageUrl: "/projects/zed-run.webp",
+    imageAlt: "Horse racing game",
+    technologies: ["Elixir", "PostgreSQL", "React"],
+    summary: (
+      <>
+        <p>
+          ZED RUN is the first horse racing game of skill to live not only on
+          the blockchain but in an open market. My contributions here involved
+          optimizing build load speeds, developing tools for 3D asset support,
+          and backend development.
+        </p>
+      </>
+    ),
+  },
+  {
     featured: true,
     title: "Tie Breaker",
     releaseYear: 2023,
