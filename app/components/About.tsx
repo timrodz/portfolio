@@ -15,10 +15,10 @@ export const About = () => {
       <h2>Welcome 🦥</h2>
       <hr />
       <p>
-        {`I'm a software engineer (6+ years of experience) & digital nomad based
-        in New Zealand, currently working at`}{" "}
-        <Link href="https://www.futureverse.com/" target="_blank">
-          Futureverse
+        {`I'm a software engineer (7+ years of experience) & digital nomad based
+        in New Zealand, currently working with`}{" "}
+        <Link href="https://www.the-boundary.com/" target="_blank">
+          The Boundary
         </Link>
         . You can see my blog at{" "}
         <Link href="https://blog.timrodz.dev" target="_blank">
