@@ -1,19 +1,17 @@
-import { TechnologyName } from "@data";
+import { Technology } from "@data";
 import { Fragment } from "react";
 
 export const TechStack = ({
   technologies,
   label,
 }: {
-  technologies: TechnologyName[];
+  technologies: Technology[];
   label?: string;
 }) => (
   <p className="technologies">
     {label}
-    {technologies.map((name) => (
-      <Fragment key={`technology-${name}`}>
-        <span>{name}</span>{" "}
-      </Fragment>
+    {technologies.map((t) => (
+      <span key={`technology-${t}`}>{t}</span>
     ))}
   </p>
 );

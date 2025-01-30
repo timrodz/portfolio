@@ -1,36 +1,37 @@
 import Link from "next/link";
 
-export type TechnologyName =
-  | "Elixir"
-  | "Next.js"
-  | "Unity"
-  | "C#"
-  | "AWS"
-  | "TypeScript"
-  | "React"
-  | "ExpressJS"
-  | "Azure"
-  | "PostgreSQL"
-  | "Python"
-  | "Phoenix"
-  | "Tailwind CSS"
-  | "Flask";
+export enum Technology {
+  Elixir = "Elixir",
+  NextJS = "Next.JS",
+  Unity = "Unity",
+  Csharp = "C#",
+  AWS = "AWS",
+  TypeScript = "TypeScript",
+  React = "React",
+  ExpressJS = "Express.js",
+  Azure = "Azure",
+  PostgreSQL = "PostgreSQL",
+  Python = "Python",
+  Phoenix = "Phoenix",
+  TailwindCSS = "Tailwind CSS",
+  Flask = "Flask",
+}
 
-export const TechnologyNameUrl: Record<TechnologyName, string> = {
-  "Next.js": "https://nextjs.org/",
-  Unity: "https://unity.com/",
-  "C#": "https://learn.microsoft.com/en-us/dotnet/csharp/",
-  AWS: "https://aws.amazon.com/",
-  TypeScript: "https://www.typescriptlang.org/",
-  React: "https://react.dev/",
-  ExpressJS: "https://expressjs.com/",
-  Azure: "https://azure.microsoft.com/en-us",
-  PostgreSQL: "https://www.postgresql.org/",
-  Python: "https://www.python.org/",
-  Elixir: "https://elixir-lang.org/",
-  Phoenix: "https://www.phoenixframework.org/",
-  "Tailwind CSS": "https://tailwindcss.com/",
-  Flask: "",
+export const TechnologyExternalUrl: Record<Technology, string> = {
+  [Technology.NextJS]: "https://nextjs.org/",
+  [Technology.Unity]: "https://unity.com/",
+  [Technology.Csharp]: "https://learn.microsoft.com/en-us/dotnet/csharp/",
+  [Technology.AWS]: "https://aws.amazon.com/",
+  [Technology.TypeScript]: "https://www.typescriptlang.org/",
+  [Technology.React]: "https://react.dev/",
+  [Technology.ExpressJS]: "https://expressjs.com/",
+  [Technology.Azure]: "https://azure.microsoft.com/en-us",
+  [Technology.PostgreSQL]: "https://www.postgresql.org/",
+  [Technology.Python]: "https://www.python.org/",
+  [Technology.Elixir]: "https://elixir-lang.org/",
+  [Technology.Phoenix]: "https://www.phoenixframework.org/",
+  [Technology.TailwindCSS]: "https://tailwindcss.com/",
+  [Technology.Flask]: "",
 };
 
 export const socials = [
@@ -64,7 +65,7 @@ export const seo = {
   themeColor: "#0e9f96",
   backgroundColor: "#fff",
   address: {
-    city: "Wellington",
+    city: "Auckland",
     country: "New Zealand",
   },
   contact: {
@@ -110,7 +111,7 @@ export type ProjectType = {
   url: string;
   imageUrl: string;
   imageAlt: string;
-  technologies: TechnologyName[];
+  technologies: Technology[];
   summary: React.ReactNode;
   releaseYear?: number;
   workingYears?: string;
@@ -130,13 +131,13 @@ export const projects: ProjectType[] = [
     imageUrl: "/projects/pb-swappables.webp",
     imageAlt: 'A Party Bear (NFT) with text saying "Clear The Runway"',
     technologies: [
-      "React",
-      "TypeScript",
-      "Next.js",
-      "AWS",
-      "Unity",
-      "C#",
-      "Tailwind CSS",
+      Technology.React,
+      Technology.TypeScript,
+      Technology.NextJS,
+      Technology.AWS,
+      Technology.Unity,
+      Technology.Csharp,
+      Technology.TailwindCSS,
     ],
     company: "Futureverse",
     role: "Lead Developer",
@@ -168,12 +169,12 @@ export const projects: ProjectType[] = [
     imageAlt:
       "Sharesies app showing 3 screens: investments, overall portfolio, and stock search",
     technologies: [
-      "TypeScript",
-      "React",
-      "Python",
-      "C#",
-      "PostgreSQL",
-      "Flask",
+      Technology.TypeScript,
+      Technology.React,
+      Technology.Python,
+      Technology.Csharp,
+      Technology.PostgreSQL,
+      Technology.Flask,
     ],
     company: "Sharesies",
     role: "Full Stack Engineer",
@@ -210,14 +211,14 @@ export const projects: ProjectType[] = [
     url: "https://www.thenextlegends.xyz",
     imageUrl: "/projects/tnl.webp",
     technologies: [
-      "React",
-      "TypeScript",
-      "Next.js",
-      "AWS",
-      "Unity",
-      "C#",
-      "ExpressJS",
-      "Tailwind CSS",
+      Technology.React,
+      Technology.TypeScript,
+      Technology.NextJS,
+      Technology.AWS,
+      Technology.Unity,
+      Technology.Csharp,
+      Technology.ExpressJS,
+      Technology.TailwindCSS,
     ],
     imageAlt: 'Muhammad Ali with text "The Next Legends"',
     company: "Futureverse",
@@ -245,7 +246,7 @@ export const projects: ProjectType[] = [
     url: "https://zed.run/",
     imageUrl: "/projects/zed-run.webp",
     imageAlt: "Horse racing game",
-    technologies: ["Elixir", "PostgreSQL", "React"],
+    technologies: [Technology.Elixir, Technology.PostgreSQL, Technology.React],
     summary: (
       <>
         <p>
@@ -266,7 +267,12 @@ export const projects: ProjectType[] = [
     url: "https://mtg-friends.fly.dev",
     imageUrl: "/projects/tie-breaker.webp",
     imageAlt: "Trading Card Games made easy",
-    technologies: ["Elixir", "Phoenix", "PostgreSQL", "Tailwind CSS"],
+    technologies: [
+      Technology.Elixir,
+      Technology.Phoenix,
+      Technology.PostgreSQL,
+      Technology.TailwindCSS,
+    ],
     summary: (
       <>
         <p>
@@ -301,11 +307,11 @@ export const projects: ProjectType[] = [
     imageUrl: "/projects/roastmysite.webp",
     imageAlt: "Roast My Site: Your website’s roasts are now public",
     technologies: [
-      "React",
-      "TypeScript",
-      "Next.js",
-      "PostgreSQL",
-      "Tailwind CSS",
+      Technology.React,
+      Technology.TypeScript,
+      Technology.NextJS,
+      Technology.PostgreSQL,
+      Technology.TailwindCSS,
     ],
     summary: (
       <>
@@ -330,7 +336,7 @@ export const projects: ProjectType[] = [
     url: "https://marketplace.visualstudio.com/items?itemName=timrodz.lightswitch",
     imageUrl: "/projects/light-switch.webp",
     imageAlt: "A light bulb emoji on a blue background",
-    technologies: ["TypeScript", "Azure"],
+    technologies: [Technology.TypeScript, Technology.Azure],
     summary: (
       <>
         <p>
@@ -351,7 +357,7 @@ export const projects: ProjectType[] = [
     url: "https://pikpok.com/games/clusterduck",
     imageUrl: "/projects/clusterduck.webp",
     imageAlt: "Many ducks with a hole in the middle",
-    technologies: ["Unity", "C#"],
+    technologies: [Technology.Unity, Technology.Csharp],
     company: "PikPok",
     role: "Game Programmer",
     summary: (
@@ -373,7 +379,7 @@ export const projects: ProjectType[] = [
     url: "https://www.youtube.com/watch?v=ekNfJQBq4Q8",
     imageUrl: "/projects/i-am-monster.webp",
     imageAlt: 'Three big creatures in a city, with the word "I Am Monster"',
-    technologies: ["Unity", "C#", "Python"],
+    technologies: [Technology.Unity, Technology.Csharp, Technology.Python],
     company: "PikPok",
     role: "Game Programmer",
     summary: (
@@ -394,7 +400,7 @@ export const projects: ProjectType[] = [
     url: "https://timrodz.itch.io/el-mandamas",
     imageUrl: "/projects/el-mandamas.webp",
     imageAlt: 'Map of Panama with text saying "El Mandamás" (The ruler)',
-    technologies: ["Unity", "C#"],
+    technologies: [Technology.Unity, Technology.Csharp],
     summary: (
       <p>
         This game was the result of a 48 hour game jam (

@@ -4,6 +4,7 @@ import Image from "next/image";
 
 import { Reenie_Beanie } from "next/font/google";
 import { Socials } from "./Socials";
+import { Technology } from "@data";
 
 const handwrittenFont = Reenie_Beanie({ weight: "400", subsets: ["latin"] });
 
@@ -67,12 +68,12 @@ export const About = () => {
       </p>
       <TechStack
         technologies={[
-          "React",
-          "TypeScript",
-          "Next.js",
-          "Elixir",
-          "PostgreSQL",
-          "AWS",
+          Technology.React,
+          Technology.TypeScript,
+          Technology.NextJS,
+          Technology.Elixir,
+          Technology.PostgreSQL,
+          Technology.AWS,
         ]}
       />
 
