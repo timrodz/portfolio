@@ -1,0 +1,9 @@
+# dependencies (none expected, but ignore if ever added)
+node_modules/
+
+# build / runtime artifacts
+dist/
+*.log
+
+# OS cruft
+.DS_Store

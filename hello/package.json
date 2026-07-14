@@ -1,0 +1,13 @@
+{
+  "name": "hello-world",
+  "version": "1.0.0",
+  "description": "Minimal console application that prints \"Hello, World!\" to stdout.",
+  "private": true,
+  "bin": {
+    "hello-world": "main.js"
+  },
+  "scripts": {
+    "build": "node --check main.js",
+    "start": "node main.js"
+  }
+}
